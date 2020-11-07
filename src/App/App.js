@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NavBar from '../NavBar/NavBar'
+import SearchBar from '../SearchBar/SearchBar'
 import {Route} from 'react-router-dom'
 import UserWords from '../UserWords/UserWords'
 import './App.css';
@@ -17,9 +18,10 @@ class App extends Component {
    {/* <Route exact path='/'>
      <HomeScreen/>
     </Route>
+   */}
    <Route path = 'search'>
     <SearchBar/>
-   </Route> */}
+   </Route> */
    <Route path = '/myWords' render = {() =>{
     return <UserWords words = {this.state.favoriteWords}/>
    }}>

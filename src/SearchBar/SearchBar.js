@@ -3,11 +3,15 @@ class SearchBar extends Component{
   constructor(){
     super()
     this.state = {
-     currentWord :''
+     currentWord :'',
+     word:null
     }
   }
   handleChange = (event) =>{
     this.setState({currentWord:event.target.value})
+  }
+  handleSubmit = () =>{
+    
   }
   render(){
     return(

@@ -1,11 +1,11 @@
-import {Route,Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 function NavBar(){
 return (
   <section>
-    <Link to="/search"/> 
-    <Link to="/myWords"/>
-    <Link to="/"/> 
-    <Link to="/Quiz"/> 
+    <NavLink to="/search">Search For a Word</NavLink>
+    <NavLink to="/myWords">My Words</NavLink>
+    <NavLink to="/">Home</NavLink> 
+    <NavLink to="/Quiz">Quiz yourself on your words</NavLink>
 
   </section>
 )

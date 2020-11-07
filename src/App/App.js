@@ -19,8 +19,10 @@ class App extends Component {
    <Route path = 'search'>
     <SearchBar/>
    </Route>
-   <Route path = 'myWords'>
-    <UserWords/>
+   <Route path = 'myWords' render = {() =>{
+    <UserWords words = {this.props.words}/>
+   }}>
+    
    </Route>
    <Route path = 'quiz'>
     <QuizArea/>

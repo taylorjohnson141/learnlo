@@ -1,25 +1,36 @@
+import React, { Component } from 'react'
 import NavBar from '../NavBar/NavBar'
 import {Route} from 'react-router-dom'
+import UserWords from '../UserWords/UserWords'
 import './App.css';
 
-function App() {
-  return (
-    <section>
+class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      favoriteWords:['hello','goodbye']
+    }
+  }
+  render() {
+   return( <section>
    <NavBar/>
-   <Route exact path='/'>
+   {/* <Route exact path='/'>
      <HomeScreen/>
     </Route>
    <Route path = 'search'>
     <SearchBar/>
-   </Route>
-   <Route path = 'myWords'>
-    <UserWords/>
-   </Route>
+   </Route> */}
+   <Route path = '/myWords' render = {() =>{
+    return <UserWords words = {this.state.favoriteWords}/>
+   }}>
+    </Route>
+   {/* 
    <Route path = 'quiz'>
     <QuizArea/>
-   </Route>
+   </Route> */}
    </section>
-  );
+   )
+}
 }
 
 export default App;

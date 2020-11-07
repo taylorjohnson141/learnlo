@@ -1,10 +1,17 @@
+import React, { Component } from 'react'
 import NavBar from '../NavBar/NavBar'
 import {Route} from 'react-router-dom'
 import './App.css';
 
-function App() {
-  return (
-    <section>
+class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      words:[]
+    }
+  }
+  render() {
+   return( <section>
    <NavBar/>
    <Route exact path='/'>
      <HomeScreen/>
@@ -19,7 +26,8 @@ function App() {
     <QuizArea/>
    </Route>
    </section>
-  );
+   )
+}
 }
 
 export default App;

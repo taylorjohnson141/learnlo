@@ -1,7 +1,7 @@
 import React from 'react'
 function UserWords (props){
   let wordsDisplay = props.words.map(word =>{
-    return <Word currentWord = {word}></Word>
+    return <Word currentWord = {word}/>
   })
   return(
     <section>

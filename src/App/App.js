@@ -1,32 +1,33 @@
 import React, { Component } from 'react'
 import NavBar from '../NavBar/NavBar'
 import {Route} from 'react-router-dom'
+import UserWords from '../UserWords/UserWords'
 import './App.css';
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
-      words:[]
+      words:['hello','goodbye']
     }
   }
   render() {
    return( <section>
    <NavBar/>
-   <Route exact path='/'>
+   {/* <Route exact path='/'>
      <HomeScreen/>
     </Route>
    <Route path = 'search'>
     <SearchBar/>
-   </Route>
-   <Route path = 'myWords' render = {() =>{
-    <UserWords words = {this.props.words}/>
+   </Route> */}
+   <Route path = '/myWords' render = {() =>{
+    return <UserWords words = {this.state.words}/>
    }}>
-    
-   </Route>
+    </Route>
+   {/* 
    <Route path = 'quiz'>
     <QuizArea/>
-   </Route>
+   </Route> */}
    </section>
    )
 }

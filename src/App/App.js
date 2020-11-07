@@ -8,7 +8,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      words:['hello','goodbye']
+      favoriteWords:['hello','goodbye']
     }
   }
   render() {
@@ -21,7 +21,7 @@ class App extends Component {
     <SearchBar/>
    </Route> */}
    <Route path = '/myWords' render = {() =>{
-    return <UserWords words = {this.state.words}/>
+    return <UserWords words = {this.state.favoriteWords}/>
    }}>
     </Route>
    {/* 

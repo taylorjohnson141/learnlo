@@ -1,5 +1,6 @@
 import React from 'react'
 import Word from '../Word/Word'
+import './UserWords.css'
 function UserWords (props){
   if(props.words.length === 0){
     return <h1>Add a word!</h1>
@@ -8,7 +9,7 @@ function UserWords (props){
     return <div><Word addWord = {props.addWord} currentWord = {word}/></div>
   })
   return(
-    <section>
+    <section class = 'words-container'>
       {wordsDisplay}
     </section>
   )

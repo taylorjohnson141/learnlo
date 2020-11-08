@@ -9,10 +9,21 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      favoriteWords:[]
+      favoriteWords:[],
+      error:''
     }
   }
   addWord = (word) =>{
+
+   let wordDuplicate = this.state.favoriteWords.find(favWord =>{
+      return favWord.meta.id === word.meta.id
+    })
+    if(wordDuplicate){
+      this.setState({error:'You already have this word, please find a different word'})
+      return
+    }
+    this.setState({error:''})
+
     this.setState({favoriteWords:[...this.state.favoriteWords,word]})
   }
   render() {
@@ -30,6 +41,8 @@ class App extends Component {
     return <UserWords addWord = {this.addWord} words = {this.state.favoriteWords}/>
    }}>
     </Route>
+    {this.state.error}
+
    {/* 
    <Route path = 'quiz'>
     <QuizArea/>

@@ -1,0 +1,10 @@
+.word-form{
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4px;
+  font-size: 2rem;
+}
+.word-input{
+  font-size: 1.5rem;
+}

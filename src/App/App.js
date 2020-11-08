@@ -17,7 +17,7 @@ class App extends Component {
   }
   render() {
    return( <section>
-     <header>Learnlo!</header>
+     <header className = 'header'>Learnlo!</header>
    <NavBar/>
    {/* <Route exact path='/'>
      <HomeScreen/>

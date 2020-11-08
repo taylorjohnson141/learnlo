@@ -1,0 +1,6 @@
+.word-card{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  height: 200px;
+}

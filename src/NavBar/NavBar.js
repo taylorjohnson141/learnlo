@@ -1,7 +1,8 @@
 import {NavLink} from 'react-router-dom'
+import './NavBar.css'
 function NavBar(){
 return (
-  <section>
+  <section class = 'nav-container'>
     <NavLink to="/search">Search For a Word</NavLink>
     <NavLink to="/myWords">My Words</NavLink>
     <NavLink to="/">Home</NavLink> 

@@ -13,18 +13,18 @@ class SearchBar extends Component{
   handleChange = (event) =>{
     this.setState({currentWord:event.target.value})
   }
+
   handleSubmit = async (event) =>{
     event.preventDefault()
-    
     let definition = await getWord(this.state.currentWord)
-    this.setState({word:definition})
+    this.setState({
+      currentWord: ''
+    });
+    console.log(this.props)
+    this.props.addWord(definition)
   }
   render(){
-    let word = ''
-    if(this.state.word){
-      word = <Word addWord = {this.props.addWord} currentWord = {this.state.word}></Word>
-
-    }
+   
     
     return(
       <form className ='word-form' onSubmit = {this.handleSubmit}>
@@ -32,7 +32,6 @@ class SearchBar extends Component{
           Input a word would you like to Study!
           <input class ='word-input'type="text" value = {this.currentWord} onChange = {this.handleChange} />
       </label>
-      {word}
       </form>
     )
   }

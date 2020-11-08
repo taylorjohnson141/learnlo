@@ -18,7 +18,7 @@ function UserWords (props){
   })
   return(
     <section>
-    <SearchBar/>
+    <SearchBar addWord = {props.addWord}/>
     <section class = 'words-container'>
       {wordsDisplay}
     </section>

@@ -14,6 +14,7 @@ class App extends Component {
   }
   render() {
    return( <section>
+     <header>Learnlo!</header>
    <NavBar/>
    {/* <Route exact path='/'>
      <HomeScreen/>

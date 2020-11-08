@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {getWord} from '../fetchCalls/fetchCalls'
 import Word from '../Word/Word'
+import './SearchBar.css'
 class SearchBar extends Component{
   constructor(){
     super()
@@ -14,6 +15,7 @@ class SearchBar extends Component{
   }
   handleSubmit = async (event) =>{
     event.preventDefault()
+    
     let definition = await getWord(this.state.currentWord)
     this.setState({word:definition})
   }
@@ -25,10 +27,10 @@ class SearchBar extends Component{
     }
     
     return(
-      <form onSubmit = {this.handleSubmit}>
+      <form className ='word-form' onSubmit = {this.handleSubmit}>
         <label>
           Input a word would you like to Study!
-          <input type="text" value = {this.currentWord} onChange = {this.handleChange} />
+          <input class ='word-input'type="text" value = {this.currentWord} onChange = {this.handleChange} />
       </label>
       {word}
       </form>

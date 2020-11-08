@@ -1,4 +1,7 @@
 .nav-container{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
   display: flex;
   justify-content: space-around;
   background-color: #1B86E5;

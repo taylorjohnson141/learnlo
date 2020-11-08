@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {getWord} from '../fetchCalls/fetchCalls'
+import Word from '../Word/Word'
 class SearchBar extends Component{
   constructor(){
     super()
@@ -10,8 +12,11 @@ class SearchBar extends Component{
   handleChange = (event) =>{
     this.setState({currentWord:event.target.value})
   }
-  handleSubmit = () =>{
-    
+  handleSubmit = (event) =>{
+    event.preventDefault()
+    getWord(this.state.currentWord)
+    .then( definition => this.setState({word:definition})
+    )
   }
   render(){
     return(
@@ -20,7 +25,9 @@ class SearchBar extends Component{
           Input a word would you like to Study!
           <input type="text" value = {this.currentWord} onChange = {this.handleChange} />
       </label>
+      <Word currentWord = {this.state.word}></Word>
       </form>
     )
   }
 }
+export default SearchBar

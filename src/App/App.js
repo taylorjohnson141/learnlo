@@ -19,9 +19,9 @@ class App extends Component {
      <HomeScreen/>
     </Route>
    */}
-   <Route path = 'search'>
+   <Route path = '/search'>
     <SearchBar/>
-   </Route> */
+   </Route> 
    <Route path = '/myWords' render = {() =>{
     return <UserWords words = {this.state.favoriteWords}/>
    }}>

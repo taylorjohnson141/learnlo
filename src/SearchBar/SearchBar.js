@@ -21,6 +21,10 @@ class SearchBar extends Component{
   handleSubmit = async (event) =>{
     event.preventDefault()
     let definition = await getWord(this.state.currentWord)
+    if(typeof definition !== 'object'){
+      this.setState({error:`Sorry we could  not find that word!`})
+      return
+    }
     this.setState({
       currentWord: ''
     });

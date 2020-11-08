@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './Word.css'
  function Word (props){
    console.log('word is the word', props)
-   
   return(
     <section class ='word-card'>
     <button onClick = {() =>{

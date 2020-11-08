@@ -7,10 +7,14 @@ class SearchBar extends Component{
     super()
     this.state = {
      currentWord :'',
-     word:null
+     word:null,
+     error:''
     }
   }
   handleChange = (event) =>{
+    if(this.state.error){
+      this.setState({error:''})
+    }
     this.setState({currentWord:event.target.value})
   }
 
@@ -20,6 +24,10 @@ class SearchBar extends Component{
     this.setState({
       currentWord: ''
     });
+if(definition.meta.lang === 'en'){
+  this.setState({error:'Please Type in a Spanish Word'})
+  return 
+}
     console.log(this.props)
     this.props.addWord(definition)
   }
@@ -32,6 +40,10 @@ class SearchBar extends Component{
           Input a word would you like to Study!
           <input class ='word-input'type="text" value = {this.currentWord} onChange = {this.handleChange} />
       </label>
+      <h1>
+      {this.state.error}
+
+      </h1>
       </form>
     )
   }

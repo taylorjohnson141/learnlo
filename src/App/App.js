@@ -12,6 +12,9 @@ class App extends Component {
       favoriteWords:[]
     }
   }
+  addWord = (word) =>{
+    this.setState({favoriteWords:[...this.state.favoriteWords,word]})
+  }
   render() {
    return( <section>
    <NavBar/>
@@ -20,10 +23,10 @@ class App extends Component {
     </Route>
    */}
    <Route path = '/search'>
-    <SearchBar/>
+    <SearchBar addWord = {this.addWord}/>
    </Route> 
    <Route path = '/myWords' render = {() =>{
-    return <UserWords words = {this.state.favoriteWords}/>
+    return <UserWords addWord = {this.addWord} words = {this.state.favoriteWords}/>
    }}>
     </Route>
    {/* 

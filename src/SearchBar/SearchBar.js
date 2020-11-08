@@ -20,7 +20,7 @@ class SearchBar extends Component{
   render(){
     let word = ''
     if(this.state.word){
-      word =   <Word currentWord = {this.state.word}></Word>
+      word =   <Word addWord = {this.props.addWord} currentWord = {this.state.word}></Word>
 
     }
     

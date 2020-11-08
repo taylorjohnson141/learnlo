@@ -9,7 +9,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      favoriteWords:['hello','goodbye']
+      favoriteWords:[]
     }
   }
   render() {

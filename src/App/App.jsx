@@ -15,14 +15,13 @@ class App extends Component {
       error:''
     }
   }
-  deleteWord = (currentWord) =>{
+  deleteWord = (currentWord) => {
     let indexOfCurrentWord = this.state.favoriteWords.indexOf(currentWord)
     let copyOfState = [...this.state.favoriteWords]
-     copyOfState.splice(indexOfCurrentWord,1)
+    copyOfState.splice(indexOfCurrentWord,1)
     this.setState({favoriteWords:copyOfState})
   }
   addWord = (word) =>{
-
    let wordDuplicate = this.state.favoriteWords.find(favWord =>{
       return favWord.meta.id === word.meta.id
     })
@@ -31,35 +30,41 @@ class App extends Component {
       return
     }
     this.setState({error:''})
-
     this.setState({favoriteWords:[...this.state.favoriteWords,word]})
   }
   render() {
-   return( <section>
+   return( 
+   <section>
+
      <header className = 'header'>Learnlo!</header>
-   <NavBar/>
-   <Route exact path='/'>
-     <HomeScreen/>
-    </Route>
+
+     <NavBar/>
+
+     <Route exact path='/'>
+        <HomeScreen/>
+      </Route>
   
-   <Route path = '/search'>
-    <SearchBar addWord = {this.addWord}/>
-   </Route> 
-   <Route path = '/myWords' render = {() =>{
-    return <UserWords addWord ={this.addWord} deleteWord = {this.deleteWord} words = {this.state.favoriteWords}/>
-   }}>
-    </Route>
-    <h1 className = 'center'>{this.state.error}</h1>
+      <Route path = '/search'>
+          <SearchBar addWord = {this.addWord}/>
+      </Route> 
 
-   
-   <Route path = '/quiz' render ={() =>{
-    return <Quiz favoriteWords = {this.state.favoriteWords}/>
+      <Route path = '/myWords' 
+        render = {() =>{
+          return <UserWords addWord ={this.addWord} deleteWord = {this.deleteWord} words = {this.state.favoriteWords}/>
+        }}>
+      </Route>
 
-   }}>
-   </Route>
+      <h1 className = 'center'>{this.state.error}</h1>
+
+      <Route path = '/quiz' 
+        render ={() =>{
+          return <Quiz favoriteWords = {this.state.favoriteWords}/>
+        }}>
+      </Route>
+
    </section>
    )
-}
+  }
 }
 
 export default App;

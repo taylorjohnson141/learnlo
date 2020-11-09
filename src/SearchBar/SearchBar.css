@@ -2,9 +2,14 @@
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 4px;
+  margin-top: 20px;
   font-size: 2rem;
 }
 .word-input{
   font-size: 1.5rem;
+}
+.center{
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }

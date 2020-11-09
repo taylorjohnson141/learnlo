@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Quiz.css'
 import QuizCard from '../QuizCard/QuizCard'
 class Quiz extends Component {
   constructor(){
@@ -41,11 +42,11 @@ class Quiz extends Component {
   }
   render(){
     if(this.state.finalScore){
-      return <h1>{this.state.finalScore}</h1>
+      return <h1 className = 'center-stuff'>Your final score is {this.state.finalScore}%</h1>
     }
     if(!this.state.currentWord  ){
       console.log('pls work',this.state.finalScore)
-      return <h1>Pick some cards to Study!</h1> 
+      return <h1 className = 'center-stuff'>No Words to Study Yet!</h1> 
     }
     
     return (

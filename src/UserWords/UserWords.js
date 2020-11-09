@@ -8,7 +8,7 @@ function UserWords (props){
     return (
       <section>
       <SearchBar addWord = {props.addWord}/>
-    <h1>Add a word!</h1>
+    <h1 className = 'center' >No Words Yet!</h1>
     </section>
 
     )

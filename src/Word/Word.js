@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './Word.css'
  function Word (props){
    if(!props.currentWord){
-    return <h1>Add a word</h1>
+    return <h1 className ='center'>Add a word!</h1>
    }
    let audio;
    if(props.currentWord.hwi.prs){

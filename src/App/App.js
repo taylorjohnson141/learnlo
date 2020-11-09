@@ -26,7 +26,7 @@ class App extends Component {
       return favWord.meta.id === word.meta.id
     })
     if(wordDuplicate){
-      this.setState({error:'You already have this word, please find a different word'})
+      this.setState({error:'You already have this word. Please find a different word'})
       return
     }
     this.setState({error:''})
@@ -48,7 +48,7 @@ class App extends Component {
     return <UserWords addWord ={this.addWord} deleteWord = {this.deleteWord} words = {this.state.favoriteWords}/>
    }}>
     </Route>
-    {this.state.error}
+    <h1 className = 'center'>{this.state.error}</h1>
 
    
    <Route path = '/quiz' render ={() =>{

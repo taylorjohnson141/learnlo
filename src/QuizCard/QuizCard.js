@@ -3,12 +3,18 @@ function QuizCard (props){
   return (
     <section>
     <h1>What is the English translation of {props.currentWord.hwi.hw}</h1>
-    <button> Weird</button>
+     <button onClick ={() =>{
+          props.changeCurrentWord(false)
+        }}> Weird</button>
         <button onClick ={() =>{
-          props.changeCurrentWord()
+          props.changeCurrentWord(true)
         }}>{props.currentWord.shortdef[0]}</button>
-        <button>No</button>
-        <button>Something</button>
+        <button onClick ={() =>{
+          props.changeCurrentWord(false)
+        }}>No</button>
+        <button onClick ={() =>{
+          props.changeCurrentWord(false)
+        }}>Something</button>
         </section>
   )
  

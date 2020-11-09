@@ -15,7 +15,7 @@ import './Word.css'
    }
    
    
-   console.log('word is the word', props.currentWord  )
+   console.log('word is the word', props.currentWord)
   return(
     <section class ='word-card'>
  {audio}

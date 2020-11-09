@@ -9,11 +9,6 @@ import './Word.css'
    console.log('word is the word', props.currentWord  )
   return(
     <section class ='word-card'>
-    <button onClick = {() =>{
-        props.deleteWord(props.currentWord)
-    }}>
-Delete Card     
- </button>
  <audio controls>
   <source src={`https://media.merriam-webster.com/audio/prons/es/me/mp3/${audioSubDirect}/${audioFile}.mp3`}/>
 </audio>
@@ -21,6 +16,11 @@ Delete Card
     <p1>English Transaltion:
     {props.currentWord.shortdef[0]}
     </p1>
+    <button onClick = {() =>{
+        props.deleteWord(props.currentWord)
+    }}>
+Delete Card     
+ </button>
   </section>
     ) 
   }

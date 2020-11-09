@@ -14,7 +14,7 @@ function UserWords (props){
     )
   }
   let wordsDisplay = props.words.map(word =>{
-    return <div><Word addWord = {props.addWord} currentWord = {word}/></div>
+    return <div><Word deleteWord = {props.deleteWord} currentWord = {word}/></div>
   })
   return(
     <section>

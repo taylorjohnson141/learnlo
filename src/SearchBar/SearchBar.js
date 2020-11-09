@@ -22,7 +22,7 @@ class SearchBar extends Component{
     event.preventDefault()
     let definition = await getWord(this.state.currentWord)
     if(typeof definition !== 'object'){
-      this.setState({error:`Sorry we could  not find that word!`})
+      this.setState({error:`Sorry we could not find that word!`})
       return
     }
     this.setState({

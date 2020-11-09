@@ -18,7 +18,7 @@ function Word(props) {
   return (
     <section className="word-card">
       <p1 className="span-word">
-        {props.currentWord.hwi.hw} 
+        {props.currentWord.hwi.hw}
         {audio}
       </p1>
       <p1 className="definition">

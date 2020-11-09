@@ -5,9 +5,7 @@ function QuizCard(props) {
   return (
     <section className="quiz-card">
       <h1 className="question">
-        What is the English translation of
-        {props.currentWord.hwi.hw}
-        ?
+        What is the English translation of {props.currentWord.hwi.hw}?
       </h1>
       <section className="button-section">
         <button
@@ -46,4 +44,4 @@ function QuizCard(props) {
     </section>
   );
 }
-export default QuizCard
+export default QuizCard;

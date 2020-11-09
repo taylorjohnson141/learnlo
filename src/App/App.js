@@ -4,6 +4,7 @@ import SearchBar from '../SearchBar/SearchBar'
 import {Route} from 'react-router-dom'
 import UserWords from '../UserWords/UserWords'
 import Quiz from '../Quiz/Quiz'
+import HomeScreen from '../HomeScreen/HomeScreen'
 import './App.css';
 
 class App extends Component {
@@ -37,10 +38,10 @@ class App extends Component {
    return( <section>
      <header className = 'header'>Learnlo!</header>
    <NavBar/>
-   {/* <Route exact path='/'>
+   <Route exact path='/'>
      <HomeScreen/>
     </Route>
-   */}
+  
    <Route path = '/search'>
     <SearchBar addWord = {this.addWord}/>
    </Route> 

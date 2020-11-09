@@ -1,4 +1,5 @@
 function QuizCard (props){
+  console.log('I am here')
   return (
     <section>
     <h1>What is the English translation of ${props.currentWord.hwi.hw}</h1>
@@ -13,3 +14,4 @@ function QuizCard (props){
  
   
 }
+export default QuizCard

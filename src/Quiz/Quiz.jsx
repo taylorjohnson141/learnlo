@@ -23,7 +23,7 @@ class Quiz extends Component {
     else{
       this.setState({wrong:this.state.wrong -=1})
     }
-    if(this.state.turn == this.state.turnLength){
+    if(this.state.turn === this.state.turnLength){
       console.log('this is the end')
       console.log(((this.state.score - this.state.wrong) / this.state.turnLength) *100)
       this.setState({finalScore:((this.state.score / this.state.turnLength) *100)}) 

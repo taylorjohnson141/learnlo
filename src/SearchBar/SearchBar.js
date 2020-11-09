@@ -41,10 +41,10 @@ if(definition.meta.lang === 'en'){
     return(
       <form className ='word-form' onSubmit = {this.handleSubmit}>
         <label>
-          Input a word would you like to Study!
+          Input a word you would like to Study!
           <input class ='word-input'type="text" value = {this.currentWord} onChange = {this.handleChange} />
       </label>
-      <h1>
+      <h1 className = 'center'>
       {this.state.error}
 
       </h1>

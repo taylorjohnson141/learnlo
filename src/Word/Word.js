@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import './Word.css'
  function Word (props){
    if(!props.currentWord){
-    return <h1>Add a word</h1>
+    return <h1 className ='center'>Add a word!</h1>
    }
    let audio;
    if(props.currentWord.hwi.prs){
      let audioFile = props.currentWord.hwi.prs[0].sound.audio
      let audioSubDirect = audioFile.charAt(0)
      audio = 
-     <audio controls>
+     <audio className = 'audio'controls>
   <source src={`https://media.merriam-webster.com/audio/prons/es/me/mp3/${audioSubDirect}/${audioFile}.mp3`}/>
 </audio>
    }
@@ -17,16 +17,15 @@ import './Word.css'
    
    console.log('word is the word', props.currentWord)
   return(
-    <section class ='word-card'>
- {audio}
-    <p1>Word: {props.currentWord.hwi.hw}</p1>
-    <p1>English Transaltion:
-    {props.currentWord.shortdef[0]}
+    <section className ='word-card'>
+    <p1 className = 'span-word'>{props.currentWord.hwi.hw} {audio}</p1>
+    <p1 className ='definition' >
+    Definition:{props.currentWord.shortdef[0]}
     </p1>
-    <button onClick = {() =>{
+    <button class = 'delete-button' onClick = {() =>{
         props.deleteWord(props.currentWord)
     }}>
-Delete Card     
+Remove   
  </button>
   </section>
     ) 

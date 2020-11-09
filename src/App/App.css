@@ -4,5 +4,12 @@ body{
 .header{
   text-align: center;
   font-size: 50px;
+  padding-top: 10px;
   padding-bottom: 10px;
+}
+.center{
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+
 }

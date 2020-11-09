@@ -3,6 +3,7 @@ import NavBar from '../NavBar/NavBar'
 import SearchBar from '../SearchBar/SearchBar'
 import {Route} from 'react-router-dom'
 import UserWords from '../UserWords/UserWords'
+import Quiz from '../Quiz/Quiz'
 import './App.css';
 
 class App extends Component {
@@ -49,10 +50,12 @@ class App extends Component {
     </Route>
     {this.state.error}
 
-   {/* 
-   <Route path = 'quiz'>
-    <QuizArea/>
-   </Route> */}
+   
+   <Route path = '/quiz' render ={() =>{
+    return <Quiz favoriteWords = {this.state.favoriteWords}/>
+
+   }}>
+   </Route>
    </section>
    )
 }

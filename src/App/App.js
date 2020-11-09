@@ -13,6 +13,12 @@ class App extends Component {
       error:''
     }
   }
+  deleteWord = (currentWord) =>{
+    let indexOfCurrentWord = this.state.favoriteWords.indexOf(currentWord)
+    let copyOfState = [...this.state.favoriteWords]
+     copyOfState.splice(indexOfCurrentWord,1)
+    this.setState({favoriteWords:copyOfState})
+  }
   addWord = (word) =>{
 
    let wordDuplicate = this.state.favoriteWords.find(favWord =>{
@@ -38,7 +44,7 @@ class App extends Component {
     <SearchBar addWord = {this.addWord}/>
    </Route> 
    <Route path = '/myWords' render = {() =>{
-    return <UserWords addWord = {this.addWord} words = {this.state.favoriteWords}/>
+    return <UserWords addWord ={this.addWord} deleteWord = {this.deleteWord} words = {this.state.favoriteWords}/>
    }}>
     </Route>
     {this.state.error}

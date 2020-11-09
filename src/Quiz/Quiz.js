@@ -8,16 +8,23 @@ class Quiz extends Component {
       currentWord :'',
       turn:0,
       turnLength:0,
-      finalScore :''
+      finalScore :'',
+      wrong:0
     }
     
   }
-  changeCurrentWord = () =>{
+  changeCurrentWord = (boolean) =>{
+
     this.setState({turn:this.state.turn += 1})
-    this.setState({score:this.state.score +=1})
+    if(boolean){
+      this.setState({score:this.state.score +=1})
+    }
+    else{
+      this.setState({wrong:this.state.wrong -=1})
+    }
     if(this.state.turn == this.state.turnLength){
       console.log('this is the end')
-      console.log((this.state.score / this.state.turnLength) *100)
+      console.log(((this.state.score - this.state.wrong) / this.state.turnLength) *100)
       this.setState({finalScore:((this.state.score / this.state.turnLength) *100)}) 
       console.log('pls work',this.state)
 

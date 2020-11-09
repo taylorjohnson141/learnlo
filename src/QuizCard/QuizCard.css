@@ -1,0 +1,5 @@
+.quiz-card{
+display: flex;
+align-self: center;
+background-color: red;
+}

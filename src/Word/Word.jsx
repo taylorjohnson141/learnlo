@@ -3,7 +3,7 @@ import './Word.css';
 
 function Word(props) {
   if (!props.currentWord) {
-    return <h1 className="center">Add a word!</h1>;
+    return <h1 role = 'no-word-error'className="center">Add a word!</h1>;
   }
   let audio;
   if (props.currentWord.hwi.prs) {
@@ -11,20 +11,21 @@ function Word(props) {
     const audioSubDirect = audioFile.charAt(0);
     audio = (
       <audio className='audio' controls >
-        <source src={`https://media.merriam-webster.com/audio/prons/es/me/mp3/${audioSubDirect}/${audioFile}.mp3`} />
+        < source role = 'audio' src={`https://media.merriam-webster.com/audio/prons/es/me/mp3/${audioSubDirect}/${audioFile}.mp3`} />
       </audio>
     );
   }
   return (
-    <section className="word-card">
-      <p1 className="span-word">
+    <section role = 'word'className="word-card">
+      <p className="span-word">
         {props.currentWord.hwi.hw}
         {audio}
-      </p1>
-      <p1 className="definition">
+      </p>
+      <p className="definition">
         Definition:{props.currentWord.shortdef[0]}
-      </p1>
+      </p>
       <button
+        role = "delete-button"
         type="button"
         className="delete-button"
         onClick={() => {

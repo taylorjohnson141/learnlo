@@ -3,7 +3,6 @@ import QuizCard from './QuizCard'
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom';
-import { BrowserRouter } from 'react-router-dom';
 
 describe("QuizCard", () =>{
   let currentWord;

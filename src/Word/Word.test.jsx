@@ -4,7 +4,6 @@ import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 
 import '@testing-library/jest-dom';
-import { BrowserRouter } from 'react-router-dom';
 
 describe('Word Component', () =>{
   let currentWord;
@@ -25,28 +24,28 @@ describe('Word Component', () =>{
     expect(wordCard).toBeInTheDocument()
   })
   it('should render correct error message if currentWord is undefined', () =>{
-    render(<BrowserRouter><Word currentWord ={0}/></BrowserRouter>)
+    render(<Word currentWord ={0}/>)
     let wordError = screen.getByRole('no-word-error')
     expect(wordError).toBeInTheDocument()
   })
   it('should have audio if card has audio', () =>{
-    render(<BrowserRouter><Word currentWord ={currentWord}/></BrowserRouter>)
+    render(<Word currentWord ={currentWord}/>)
     let audio = screen.getByRole('audio')
     expect(audio.src).toEqual("https://media.merriam-webster.com/audio/prons/es/me/mp3/l/lejos01sp.mp3")
   })
   it('should have delete button', () =>{
-    render(<BrowserRouter><Word currentWord ={currentWord}/></BrowserRouter>)
+    render(<Word currentWord ={currentWord}/>)
     let deleteButton = screen.getByRole('delete-button')
     expect(deleteButton).toBeInTheDocument()
   })
   it('should be able to show correct word', () =>{
-    render(<BrowserRouter><Word currentWord ={currentWord}/></BrowserRouter>)
+    render(<Word currentWord ={currentWord}/>)
     let correctWord = screen.getByText('lejos')
     expect(correctWord).toBeInTheDocument()
   })
   it('should call delete word when button is clicked', () =>{
     let deleteFunction = jest.fn()
-    render(<BrowserRouter><Word deleteWord = {deleteFunction}currentWord ={currentWord}/></BrowserRouter>)
+    render(<Word deleteWord = {deleteFunction}currentWord ={currentWord}/>)
     let deleteButton = screen.getByRole('delete-button')
     userEvent.click(deleteButton)
     expect(deleteFunction).toHaveBeenCalledTimes(1)

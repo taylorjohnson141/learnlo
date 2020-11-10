@@ -2,8 +2,6 @@ import React from 'react';
 import UserWords from './UserWords'
 import { screen, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { BrowserRouter } from 'react-router-dom';
-
 describe('UserWords', () =>{
   let currentWords;
   beforeEach(() => {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import NavBar from '../NavBar/NavBar'
-import SearchBar from '../SearchBar/SearchBar'
 import {Route} from 'react-router-dom'
 import UserWords from '../UserWords/UserWords'
 import Quiz from '../Quiz/Quiz'

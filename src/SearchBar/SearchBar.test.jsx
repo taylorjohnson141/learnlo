@@ -3,7 +3,6 @@ import SearchBar from './SearchBar'
 import { screen, render,fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom';
-import { BrowserRouter } from 'react-router-dom';
 import {getWord} from '../fetchCalls/fetchCalls'
 
 jest.mock('../fetchCalls/fetchCalls')
@@ -49,7 +48,7 @@ it('Should render a form', () =>{
     let error = await waitFor(() =>screen.getByText('Sorry we could not find that word!'))
     expect(error).toBeInTheDocument()
   })
-  it.only('Should call add word if given valid word', async () =>{
+  it('Should call add word if given valid word', async () =>{
     getWord.mockResolvedValueOnce({
       meta :{
         lang :'es'

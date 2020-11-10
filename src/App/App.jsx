@@ -43,11 +43,7 @@ class App extends Component {
      <Route exact path='/'>
         <HomeScreen/>
       </Route>
-  
-      <Route path = '/search'>
-          <SearchBar addWord = {this.addWord}/>
-      </Route> 
-
+      
       <Route path = '/myWords' 
         render = {() =>{
           return <UserWords addWord ={this.addWord} deleteWord = {this.deleteWord} words = {this.state.favoriteWords}/>

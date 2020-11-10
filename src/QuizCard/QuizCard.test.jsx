@@ -23,7 +23,7 @@ describe("QuizCard", () =>{
       let cardQuestion = screen.getByText('What is the English translation of lejos?')
       expect(cardQuestion).toBeInTheDocument()
     })
-    it('Should call the changeCurrent word function with true when the correct button is clicked ',() =>{
+    it('Should call the changeCurrent word function with true when the correct button is clicked',() =>{
       let changeCurrentWord = jest.fn()
       render(<QuizCard changeCurrentWord = {changeCurrentWord}currentWord = {currentWord}/>)
       let cardQuestion = screen.getByText("far away, distant")

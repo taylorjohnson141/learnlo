@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import NavBar from '../NavBar/NavBar'
-import SearchBar from '../SearchBar/SearchBar'
 import {Route} from 'react-router-dom'
 import UserWords from '../UserWords/UserWords'
 import Quiz from '../Quiz/Quiz'
@@ -43,11 +42,7 @@ class App extends Component {
      <Route exact path='/'>
         <HomeScreen/>
       </Route>
-  
-      <Route path = '/search'>
-          <SearchBar addWord = {this.addWord}/>
-      </Route> 
-
+      
       <Route path = '/myWords' 
         render = {() =>{
           return <UserWords addWord ={this.addWord} deleteWord = {this.deleteWord} words = {this.state.favoriteWords}/>

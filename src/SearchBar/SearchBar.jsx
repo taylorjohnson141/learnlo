@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {getWord} from '../fetchCalls/fetchCalls'
-import Word from '../Word/Word'
 import './SearchBar.css'
+
 class SearchBar extends Component{
   constructor(){
     super()
@@ -29,6 +29,7 @@ class SearchBar extends Component{
       currentWord: ''
     });
     if(definition.meta.lang === 'en'){
+
       this.setState({error:'Please Type in a Spanish Word'})
       return 
     }
@@ -36,10 +37,10 @@ class SearchBar extends Component{
   }
     render(){
       return(
-        <form className ='word-form' onSubmit = {this.handleSubmit}>
+        <form data-testid='form' className ='word-form' onSubmit = {this.handleSubmit}>
           <label>
             Input a word you would like to Study!
-            <input class ='word-input'type="text" value = {this.currentWord} onChange = {this.handleChange} />
+            <input data-testid='form-input'className ='word-input'type="text" value = {this.currentWord} onChange = {this.handleChange} />
           </label>
           <h1 className = 'center'>
             {this.state.error}

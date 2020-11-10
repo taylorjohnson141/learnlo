@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Quiz.css';
+import PropTypes from 'prop-types';
+
 import QuizCard from '../QuizCard/QuizCard';
 
 class Quiz extends Component {
@@ -45,4 +47,9 @@ class Quiz extends Component {
     )
   }
 }
+
 export default Quiz
+
+Quiz.propTypes = {
+  favoriteWords:PropTypes.array
+}

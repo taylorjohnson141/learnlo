@@ -1,5 +1,7 @@
 import React from 'react';
 import './QuizCard.css';
+import PropTypes from 'prop-types';
+
 
 function QuizCard(props) {
   return (
@@ -45,3 +47,8 @@ function QuizCard(props) {
   );
 }
 export default QuizCard;
+
+QuizCard.protoTypes = {
+  changeCurrentWord : PropTypes.func,
+  currentWord :PropTypes.object
+}

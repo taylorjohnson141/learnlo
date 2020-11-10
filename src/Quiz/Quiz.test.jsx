@@ -1,6 +1,6 @@
 import React from 'react';
 import Quiz from './Quiz'
-import { screen, render,fireEvent, waitFor } from '@testing-library/react';
+import { screen, render,waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom';
 describe('Quiz', () =>{

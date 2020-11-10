@@ -2,7 +2,7 @@
   border-radius: 4px;
   color:#F7F7F7;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: column;
   border: 2px solid #120A02;
   height: 200px;
@@ -10,7 +10,6 @@
   margin-bottom: 0;
 }
 .delete-button{
-  display: flex;
   color :#F7F7F7;
   background-color: #8C1833;
   margin-left: auto; 
@@ -18,17 +17,21 @@
   border-radius: 0;
 }
 .audio{
+  margin-left: 2px;
   height: 30px;
 }
 .span-word{
   background-color: #020887;
   text-align: center;
   border-bottom: 2px solid  #F7F7F7;
+  margin-bottom: 0%;
+  margin-top: 0px;
+  padding-top: 2px;
 }
 .definition{
   text-align: center;
-  font-size: 1em;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  font-size: 2rem;
+  margin-top: 3px;
+  margin-bottom: 0;
   color:#120A02;
 }

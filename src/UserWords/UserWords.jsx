@@ -1,6 +1,8 @@
 import React from 'react';
 import Word from '../Word/Word';
 import './UserWords.css';
+import PropTypes from 'prop-types';
+
 import SearchBar from '../SearchBar/SearchBar';
 
 function UserWords(props) {
@@ -25,3 +27,8 @@ function UserWords(props) {
   );
 }
 export default UserWords
+UserWords.propTypes = {
+  addWord :PropTypes.func,
+  deleteWord:PropTypes.func,
+  words:PropTypes.array
+}

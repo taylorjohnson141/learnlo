@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {getWord} from '../fetchCalls/fetchCalls'
 import './SearchBar.css'
+import PropTypes from 'prop-types';
+
 
 class SearchBar extends Component{
   constructor(){
@@ -50,3 +52,7 @@ class SearchBar extends Component{
     }
 }
 export default SearchBar;
+
+SearchBar.propTypes = {
+  addWord :PropTypes.func
+}

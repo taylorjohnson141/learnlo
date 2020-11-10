@@ -1,5 +1,7 @@
 import React from 'react';
 import './Word.css';
+import PropTypes from 'prop-types';
+
 
 function Word(props) {
   if (!props.currentWord) {
@@ -38,3 +40,7 @@ function Word(props) {
 }
 
 export default Word;
+
+Word.propTypes = {
+  deleteWord :PropTypes.func
+}

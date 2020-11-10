@@ -16,9 +16,4 @@ describe('NavBar', () => {
     expect(HomeLink).toBeInTheDocument()
     expect(QuizLink).toBeInTheDocument()
   })
-  it('Should go WordArea when Word are is clicked', () =>{
-    let myWordsLink = screen.getByText('My Words')
-    userEvent.click(myWordsLink)
-    expect
-  })
 })

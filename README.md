@@ -1,4 +1,4 @@
-#### LearnLo!
+## LearnLo!
 
 ### What is it?
 
@@ -30,7 +30,7 @@ This is a the final score
 
 ### Extensions
 
-I hope to continue developing Learnlo with more features. The first feature I would like to add would be a homscreen that displyed a users dashboard of all the quizes they have taken and their progress as well as other relevent language learning tools. I would also like to give users the oppurtunity to select the exact word they want to study instead of relying on the search bar. I would also like to add the abilty for a user to create folders of different words they want to study as well as the oppurtunity to create there own words. Finally I would like to add the ability for a user to log in and out.
+I hope to continue developing Learnlo with more features. The first feature I would like to add would be a homescreen that displyed a users dashboard of all the quizzes they have taken and their progress as well as other relevent language learning tools. I would also like to give users the opportunity to select the exact word they want to study instead of relying on the search bar which only picks the first instance of the word. I would also like to add the abilty for a user to create folders of different words they want to study as well as the oppoprtunity to create their own words. Finally I would like to add the ability for a user to log in and out.
 
 ## Build with Merriam-Webster Spanish-English Dictionary API 
 

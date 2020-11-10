@@ -1,6 +1,8 @@
 import React from 'react';
 import Word from './Word'
 import { screen, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event'
+
 import '@testing-library/jest-dom';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -41,6 +43,12 @@ describe('Word Component', () =>{
     render(<BrowserRouter><Word currentWord ={currentWord}/></BrowserRouter>)
     let correctWord = screen.getByText('lejos')
     expect(correctWord).toBeInTheDocument()
-
+  })
+  it('should call delete word when button is clicked', () =>{
+    let deleteFunction = jest.fn()
+    render(<BrowserRouter><Word deleteWord = {deleteFunction}currentWord ={currentWord}/></BrowserRouter>)
+    let deleteButton = screen.getByRole('delete-button')
+    userEvent.click(deleteButton)
+    expect(deleteFunction).toHaveBeenCalledTimes(1)
   })
 })

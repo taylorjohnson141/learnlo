@@ -20,7 +20,7 @@ describe('Word Component', () =>{
     }
     })
   it('should render a word correctly', () =>{
-    render(<BrowserRouter><Word currentWord ={currentWord}/></BrowserRouter>)
+    render(<Word currentWord ={currentWord}/>)
     let wordCard = screen.getByRole('word')
     expect(wordCard).toBeInTheDocument()
   })

@@ -48,7 +48,7 @@ function QuizCard(props) {
 }
 export default QuizCard;
 
-QuizCard.protoTypes = {
+QuizCard.propTypes = {
   changeCurrentWord : PropTypes.func,
   currentWord :PropTypes.object
 }

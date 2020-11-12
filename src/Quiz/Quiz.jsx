@@ -18,11 +18,11 @@ class Quiz extends Component {
   }
   changeCurrentWord = (boolean) =>{
 
-    this.setState({turn:this.state.turn += 1})
+    this.setState({turn:this.state.turn + 1})
     if(boolean){
-      this.setState({score:this.state.score +=1})
+      this.setState({score:this.state.score + 1})
     }else{
-      this.setState({wrong:this.state.wrong -=1})
+      this.setState({wrong:this.state.wrong - 1})
     }
     if(this.state.turn === this.state.turnLength){
       this.setState({finalScore:((this.state.score / this.state.turnLength) *100)}) 

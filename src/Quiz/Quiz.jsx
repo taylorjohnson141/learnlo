@@ -36,7 +36,7 @@ class Quiz extends Component {
     this.setState({currentWord:this.props.favoriteWords[this.state.turn]})
   }
   render(){
-    if(this.state.finalScore){
+    if(this.state.finalScore ||this.state.finalScore ===0 ){
       return <h1 className = 'center-stuff'>Your final score is {this.state.finalScore}%</h1>
     }
     if(!this.state.currentWord){

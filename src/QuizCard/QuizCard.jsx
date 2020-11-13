@@ -22,6 +22,7 @@ function QuizCard(props) {
           type="button"
           className="button"
           onClick={() => {
+            console.log('clicks')
             props.changeCurrentWord(true);
           }}>
           {props.currentWord.shortdef[0]}

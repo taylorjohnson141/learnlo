@@ -16,11 +16,16 @@ class Quiz extends Component {
       wrong:0
     } 
   }
-  changeCurrentWord = (boolean) =>{
+  changeCurrentWord = async (boolean) =>{
 
-    this.setState({turn:this.state.turn + 1})
+     await this.setState(prevState =>{
+       console.log(prevState)
+       return{
+       turn:prevState.turn + 1
+       }
+      })
     if(boolean){
-      this.setState({score:this.state.score + 1})
+      this.setState({score:this.state.score +1})
     }else{
       this.setState({wrong:this.state.wrong - 1})
     }
@@ -28,6 +33,7 @@ class Quiz extends Component {
       this.setState({finalScore:((this.state.score / this.state.turnLength) *100)}) 
       return 
     }else{
+      console.log('hello',this.state.turn)
       this.setState({currentWord:this.props.favoriteWords[this.state.turn]})
     }
   }

@@ -16,7 +16,8 @@ function UserWords({words,addWord,deleteWord}) {
   return (
     <section>
       <SearchBar addWord={addWord} />
-      {words.length && <section className="words-container">
+      {words.length && 
+      <section className="words-container">
         <WordList words = {words}addWord = {addWord} deleteWord = {deleteWord} />
       </section>}
     </section>

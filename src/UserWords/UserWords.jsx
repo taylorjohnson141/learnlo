@@ -5,24 +5,20 @@ import PropTypes from 'prop-types';
 
 import SearchBar from '../SearchBar/SearchBar';
 
-function UserWords(props) {
-  if (props.words.length === 0) {
-    return (
-      <section>
-        <SearchBar addWord={props.addWord} />
-        <h1 className="center">No Words Yet!</h1>
-      </section>
-    );
-  }
-  const wordsDisplay = props.words.map((word,index)=>{
-    return <div key = {index}><Word  deleteWord = {props.deleteWord} currentWord = {word}/></div>
+function WordList({words,deleteWord}){
+  return words.map((word,index)=>{
+    return <div key = {index}><Word  deleteWord = {deleteWord} currentWord = {word}/></div>
   });
+}
+
+function UserWords({words,addWord,deleteWord}) {
   return (
     <section>
-      <SearchBar addWord={props.addWord} />
+      <SearchBar addWord={addWord} />
+      {words.length && 
       <section className="words-container">
-        {wordsDisplay}
-      </section>
+        <WordList words = {words} addWord = {addWord} deleteWord = {deleteWord} />
+      </section>}
     </section>
   );
 }

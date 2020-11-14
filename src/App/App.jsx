@@ -21,6 +21,7 @@ class App extends Component {
     this.setState({favoriteWords:copyOfState})
   }
   addWord = (word) =>{
+    console.log(word)
    let wordDuplicate = this.state.favoriteWords.find(favWord =>{
       return favWord.meta.id === word.meta.id
     })

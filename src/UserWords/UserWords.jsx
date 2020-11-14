@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import SearchBar from '../SearchBar/SearchBar';
 
 function WordList({words,deleteWord}){
-  console.log(words)
   return words.map((word,index)=>{
     return <div key = {index}><Word  deleteWord = {deleteWord} currentWord = {word}/></div>
   });
@@ -18,7 +17,7 @@ function UserWords({words,addWord,deleteWord}) {
       <SearchBar addWord={addWord} />
       {words.length && 
       <section className="words-container">
-        <WordList words = {words}addWord = {addWord} deleteWord = {deleteWord} />
+        <WordList words = {words} addWord = {addWord} deleteWord = {deleteWord} />
       </section>}
     </section>
   );

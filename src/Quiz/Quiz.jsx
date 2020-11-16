@@ -16,6 +16,14 @@ class Quiz extends Component {
       wrong:0
     } 
   }
+  incrementScore = () =>{
+    this.setState({score:this.state.score +1})
+
+  }
+  decrementScore = () =>{
+    this.setState({wrong:this.state.wrong - 1})
+
+  }
   changeCurrentWord = async (boolean) =>{
 
      await this.setState(prevState =>{
@@ -24,11 +32,7 @@ class Quiz extends Component {
        turn:prevState.turn + 1
        }
       })
-    if(boolean){
-      this.setState({score:this.state.score +1})
-    }else{
-      this.setState({wrong:this.state.wrong - 1})
-    }
+
     if(this.state.turn === this.state.turnLength){
       this.setState({finalScore:((this.state.score / this.state.turnLength) *100)}) 
       return 
@@ -49,7 +53,7 @@ class Quiz extends Component {
       return <h1 className = 'center-stuff'>No Words to Study Yet!</h1> 
     }
     return (
-      <QuizCard favoriteWords = {this.props.favoriteWords}changeCurrentWord = {this.changeCurrentWord} currentWord = {this.state.currentWord}/>
+      <QuizCard incrementScore ={this.incrementScore} decrementScore = {this.decrementScore} favoriteWords = {this.props.favoriteWords}changeCurrentWord = {this.changeCurrentWord} currentWord = {this.state.currentWord}/>
     )
   }
 }

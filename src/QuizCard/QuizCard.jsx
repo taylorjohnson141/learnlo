@@ -11,51 +11,52 @@ function QuizValues (){
       { value: "", correct: false },
     ] 
 }
-function QuizList(){
+function QuizList(
+  changeCurrentWord,
+  incrementScore,
+  decrementScore,
+  favoriteWords,
+  currentWord
+  ){
  let options  =  QuizValues()
- let shuffledOptions = shuffle(options)
+ shuffle(options)
+ console.log(options)
+ return options.map((word,idx) =>{
+   if(word.correct){
+     word.value = currentWord
+   }
+   console.log(currentWord)
+   return  <button
+   key ={idx}
+   type="button"
+   className="button"
+   onClick={() => {
+    word.correct
+    ? incrementScore()
+    : decrementScore()
+    changeCurrentWord();
+   }}>
+   {word.correct
+    ? word.value.shortdef[0]
+    : favoriteWords[idx].shortdef[0]
+  }
+ </button>
+ })
 }
-function QuizCard(props) {
+function QuizCard({currentWord,changeCurrentWord,incrementScore,decrementScore,favoriteWords}) {
   return (
     <section className="quiz-card">
       <h1 className="question">
-        What is the English translation of {props.currentWord.hwi.hw}?
+        What is the English translation of {currentWord.hwi.hw}?
       </h1>
       <section className="button-section">
-        <button
-          type="button"
-          className="button"
-          onClick={() => {
-            props.changeCurrentWord(false);
-          }}>
-          Weird
-        </button>
-        <button
-          type="button"
-          className="button"
-          onClick={() => {
-            console.log('clicks')
-            props.changeCurrentWord(true);
-          }}>
-          {props.currentWord.shortdef[0]}
-        </button>
-        <button
-          type="button"
-          className="button"
-          onClick={() =>{
-            props.changeCurrentWord(false);
-          }}>
-          No
-        </button>
-        <button
-          type="button"
-          className="button"
-          onClick={() => {
-            props.changeCurrentWord(false);
-          }}>
-          Something
-        </button>
-      </section>
+      {QuizList(changeCurrentWord,
+  incrementScore,
+  decrementScore,
+  favoriteWords,
+  currentWord
+  )}
+    </section>
     </section>
   );
 }

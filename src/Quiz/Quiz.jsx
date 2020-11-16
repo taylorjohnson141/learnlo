@@ -49,7 +49,7 @@ class Quiz extends Component {
       return <h1 className = 'center-stuff'>No Words to Study Yet!</h1> 
     }
     return (
-      <QuizCard changeCurrentWord = {this.changeCurrentWord} currentWord = {this.state.currentWord}/>
+      <QuizCard favoriteWords = {this.props.favoriteWords}changeCurrentWord = {this.changeCurrentWord} currentWord = {this.state.currentWord}/>
     )
   }
 }

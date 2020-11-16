@@ -2,7 +2,9 @@ import React from 'react';
 import './QuizCard.css';
 import PropTypes from 'prop-types';
 
-
+function QuizList(){
+  
+}
 function QuizCard(props) {
   return (
     <section className="quiz-card">

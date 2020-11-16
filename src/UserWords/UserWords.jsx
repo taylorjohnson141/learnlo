@@ -22,9 +22,11 @@ function UserWords({words,addWord,deleteWord}) {
     </section>
   );
 }
-export default UserWords
+
 UserWords.propTypes = {
   addWord :PropTypes.func,
   deleteWord:PropTypes.func,
   words:PropTypes.array
 }
+
+export default UserWords

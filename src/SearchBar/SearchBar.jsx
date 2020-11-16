@@ -38,6 +38,7 @@ class SearchBar extends Component{
       this.props.addWord(definition)
   }
     render(){
+      console.log(this.state.error)
       return(
         <form data-testid='form' className ='word-form' onSubmit = {this.handleSubmit}>
           <label>

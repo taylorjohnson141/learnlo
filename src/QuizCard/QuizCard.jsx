@@ -22,6 +22,12 @@ function QuizList(
  shuffle(options)
  console.log(options)
  return options.map((word,idx) =>{
+   if(idx == favoriteWords.indexOf(currentWord) && idx !== 0){
+     idx =0
+   }
+   else if (idx === 0){
+     idx =1
+   }
    if(word.correct){
      word.value = currentWord
    }

@@ -1,6 +1,7 @@
 import React from 'react';
 import './QuizCard.css';
 import PropTypes from 'prop-types';
+import shuffle from '../tools/shuffleArray'
 
 function QuizValues (){
   return [
@@ -11,7 +12,8 @@ function QuizValues (){
     ] 
 }
 function QuizList(){
-
+ let options  =  QuizValues()
+ let shuffledOptions = shuffle(options)
 }
 function QuizCard(props) {
   return (

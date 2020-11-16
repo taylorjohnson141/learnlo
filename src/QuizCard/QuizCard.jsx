@@ -2,8 +2,16 @@ import React from 'react';
 import './QuizCard.css';
 import PropTypes from 'prop-types';
 
+function QuizValues (){
+  return [
+      { value: "", correct: true },
+      { value: "", correct: false },
+      { value: "", correct: false },
+      { value: "", correct: false },
+    ] 
+}
 function QuizList(){
-  
+
 }
 function QuizCard(props) {
   return (

@@ -22,14 +22,16 @@ function QuizList(
  shuffle(options)
  console.log(options)
  return options.map((word,idx) =>{
-   if(idx == favoriteWords.indexOf(currentWord) && idx !== 0){
-     idx =0
-   }
-   else if (idx === 0){
-     idx =1
-   }
+  
    if(word.correct){
      word.value = currentWord
+   }
+   let text;
+   if(currentWord.shortdef[0] === favoriteWords[idx].shortdef[0]){
+     text = 'super'
+   }
+   else {
+     text = favoriteWords[idx].shortdef[0]
    }
    console.log(currentWord)
    return  <button
@@ -44,7 +46,7 @@ function QuizList(
    }}>
    {word.correct
     ? word.value.shortdef[0]
-    : favoriteWords[idx].shortdef[0]
+    : text
   }
  </button>
  })

@@ -20,21 +20,20 @@ function QuizList(
   ){
  let options  =  QuizValues()
  shuffle(options)
- if(favoriteWords.length<4){
-   return <span>Please Add at Least 4 words to Study!</span>
- }
+ console.log(options)
  return options.map((word,idx) =>{
   
    if(word.correct){
      word.value = currentWord
    }
    let text;
-   if(currentWord && currentWord.shortdef[0] === favoriteWords[idx].shortdef[0]){
+   if(currentWord.shortdef[0] === favoriteWords[idx].shortdef[0]){
      text = 'super'
    }
    else {
      text = favoriteWords[idx].shortdef[0]
    }
+   console.log(currentWord)
    return  <button
    key ={idx}
    type="button"
@@ -53,27 +52,20 @@ function QuizList(
  })
 }
 function QuizCard({currentWord,changeCurrentWord,incrementScore,decrementScore,favoriteWords}) {
-
   return (
     <section className="quiz-card">
-      {favoriteWords.length < 4 
-       ? <span>Please Add at Least 4 words to Study!</span> 
-       : <>
-       <h1 className="question">
-          What is the English translation of {currentWord.hwi.hw}?
-        </h1>
-        <section className="button-section">
-          {QuizList(changeCurrentWord,
-            incrementScore,
-            decrementScore,
-            favoriteWords,
-            currentWord
-                  )
-          }
-        </section>
-        </>
-      }
-   </section>
+      <h1 className="question">
+        What is the English translation of {currentWord.hwi.hw}?
+      </h1>
+      <section className="button-section">
+      {QuizList(changeCurrentWord,
+  incrementScore,
+  decrementScore,
+  favoriteWords,
+  currentWord
+  )}
+    </section>
+    </section>
   );
 }
 export default QuizCard;

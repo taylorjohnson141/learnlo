@@ -13,12 +13,11 @@ class SearchBar extends Component{
      error:''
     }
   }
-  handleChange =  (event) =>{
+  handleChange = (event) =>{
     if(this.state.error){
       this.setState({error:''})
     }
     this.setState({currentWord:event.target.value})
-
   }
 
   handleSubmit = async (event) => {

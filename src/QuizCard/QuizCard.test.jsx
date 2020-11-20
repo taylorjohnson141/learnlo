@@ -31,12 +31,15 @@ describe("QuizCard", () =>{
       let cardQuestion = screen.getByText('What is the English translation of lejos?')
       expect(cardQuestion).toBeInTheDocument()
     })
-    it('Should call the changeCurrent word function with true when the correct button is clicked',() =>{
+    it('Should call the changeCurrent word function and incrememt score to be called when the correct button is clicked',() =>{
+      let incrementScore = jest.fn()
+      let decrementScore =jest.fn()
       let changeCurrentWord = jest.fn()
-      render(<QuizCard changeCurrentWord = {changeCurrentWord}currentWord = {currentWord}/>)
+      render(<QuizCard incrementScore ={incrementScore} decrementScore = {decrementScore} favoriteWords = {[{shortdef:['testWord1']},{shortdef:['testWord2']},{shortdef:['testWord3']},{shortdef:['testWord4']}]} changeCurrentWord = {changeCurrentWord}currentWord = {currentWord}/>)
       let cardQuestion = screen.getByText("far away, distant")
       userEvent.click(cardQuestion)
-      expect(changeCurrentWord).toBeCalledWith(true)
+      expect(incrementScore).toBeCalled()
+      expect(changeCurrentWord).toBeCalled()
     })
     it('Should call the changeCurrent word function with false when wrong button is clicked',() =>{
       let changeCurrentWord = jest.fn()

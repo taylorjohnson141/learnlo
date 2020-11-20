@@ -28,7 +28,7 @@ describe('App', () =>{
       render(<MemoryRouter><App/></MemoryRouter>)
       let MyWords = screen.getByText('My Words')
       userEvent.click(MyWords)
-      let userWords  = await waitFor(() => screen.getByText('No Words Yet!'))
+      let userWords  = await waitFor(() => screen.getByText('Input a word you would like to Study!'))
       expect(userWords).toBeInTheDocument()
     })
     it('Should render Quiz correctly', async () =>{
@@ -65,14 +65,14 @@ describe('App', () =>{
         render(<MemoryRouter><App/></MemoryRouter>)
         let MyWords = screen.getByText('My Words')
         userEvent.click(MyWords)
-        let userWords  = await waitFor(() => screen.getByText('No Words Yet!'))
+        let userWords  = await waitFor(() => screen.getByText('Input a word you would like to Study!'))
         let form = screen.getByTestId('form')
         userEvent.type(form,'algo')
         fireEvent.submit(form);
         await waitFor(() => expect(screen.getByText('lejos')).toBeInTheDocument())
         let Quiz = screen.getByText('Quiz')
         userEvent.click(Quiz)
-        await waitFor(() => expect(screen.getByText('What is the English translation of lejos?')).toBeInTheDocument())
+        await waitFor(() => expect(screen.getByText('Please Add at Least 4 words to Study!')).toBeInTheDocument())
 
       })
     })

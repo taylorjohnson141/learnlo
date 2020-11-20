@@ -17,8 +17,17 @@ describe("QuizCard", () =>{
       "by far"]
     }
     })
+    it('Should render correct error message if user has not added 4 words',() =>{
+      let incrementScore = jest.fn()
+      let decrementScore =jest.fn()
+    render(<QuizCard incrementScore ={incrementScore} decrementScore = {decrementScore} favoriteWords = {[{shortdef:['testWord1']},{shortdef:['testWord2']},{shortdef:['testWord3']}]} currentWord = {currentWord}/>)
+      let cardQuestion = screen.getByText('Please Add at Least 4 words to Study!')
+      expect(cardQuestion).toBeInTheDocument()
+    })
     it('Should render the correct question', () =>{
-      render(<QuizCard currentWord = {currentWord}/>)
+      let incrementScore = jest.fn()
+      let decrementScore =jest.fn()
+      render(<QuizCard incrementScore ={incrementScore} decrementScore = {decrementScore} favoriteWords = {[{shortdef:['testWord1']},{shortdef:['testWord2']},{shortdef:['testWord3']},{shortdef:['testWord4']}]} currentWord = {currentWord}/>)
       let cardQuestion = screen.getByText('What is the English translation of lejos?')
       expect(cardQuestion).toBeInTheDocument()
     })

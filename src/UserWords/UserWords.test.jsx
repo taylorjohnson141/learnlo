@@ -25,7 +25,7 @@ describe('UserWords', () =>{
     })
   it('should render correct message if there are no words', () =>{
     render(<UserWords words = {[]}/>)
-    let NoWordsMessage = screen.getByText('No Words Yet!')
+    let NoWordsMessage = screen.getByText('Input a word you would like to Study!')
     expect(NoWordsMessage).toBeInTheDocument()
   })
   it('should render SearchBar even if there are no words', () =>{

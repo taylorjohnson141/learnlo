@@ -26,7 +26,7 @@ describe('Quiz', () =>{
     })
   it('Should Render the correct message if there are no words' ,() =>{
     render(<Quiz favoriteWords = {[]}/>)
-    let noWordsMessage = screen.getByText('No Words to Study Yet!')
+    let noWordsMessage = screen.getByText('Input a word you would like to Study!')
     expect(noWordsMessage).toBeInTheDocument()
   })
   it('Should Render QuizCards when given words', () =>{

@@ -9,3 +9,20 @@
   margin-left: auto;
   margin-right: auto;
 } 
+@media only screen and (max-width: 800px) {
+  .words-container{
+    display: grid;
+    grid-template-columns:1fr 1fr ;
+    grid-gap: 5px;
+    padding: 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .words-container{
+    display: grid;
+    grid-template-columns:1fr ;
+    grid-gap: 5px;
+    padding: 10px;
+  }
+}
+

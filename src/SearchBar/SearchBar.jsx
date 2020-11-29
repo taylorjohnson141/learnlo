@@ -23,13 +23,14 @@ class SearchBar extends Component{
   handleSubmit = async (event) => {
     event.preventDefault()
     let definition = await getWord(this.state.currentWord)
+    this.setState({
+      currentWord: ''
+    });
     if(typeof definition !== 'object'){
       this.setState({error:`Sorry we could not find that word!`})
       return
     }
-    this.setState({
-      currentWord: ''
-    });
+   
     if(definition.meta.lang === 'en'){
 
       this.setState({error:'Please Type in a Spanish Word'})
@@ -43,7 +44,7 @@ class SearchBar extends Component{
         <form data-testid='form' className ='word-form' onSubmit = {this.handleSubmit}>
           <label>
             Input a word you would like to Study!
-            <input data-testid='form-input'className ='word-input'type="text" value = {this.currentWord} onChange = {this.handleChange} />
+            <input data-testid='form-input'className ='word-input'type="text" value = {this.state.currentWord} onChange = {this.handleChange} />
           </label>
           <h1 className = 'center'>
             {this.state.error}

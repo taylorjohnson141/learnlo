@@ -47,7 +47,9 @@ class Quiz extends Component {
   }
   render(){
     if(this.state.finalScore ||this.state.finalScore ===0 ){
-      return <h1 role ='final-score'className = 'center-stuff'>Your final score is {this.state.finalScore.toFixed(2)}%</h1>
+      let finalScoreLength = this.state.finalScore.toString().length
+      
+      return <h1 role ='final-score'className = 'center-stuff'>Your final score is {finalScoreLength > 4 ? this.state.finalScore.toFixed(2):this.state.finalScore}%</h1>
     }
     if(!this.state.currentWord){
       return <h1 className = 'center-stuff'>No Words to Study Yet!</h1> 

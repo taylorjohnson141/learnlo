@@ -3,12 +3,19 @@
   padding-bottom: 1rem;
   font-size: 1.25rem;
   display: flex;
+  align-items: center;
   justify-content: space-around;
   background-color: #1B86E5;
 }
 .link{
   color: white;
   text-decoration: none;
+}
+.logo{
+  height: 15vh;
+  width: 15vh;
+  margin: 0;
+  padding: 0;
 }
   .link:visited { text-decoration: none; color:white; }
   .link:focus { text-decoration: none; color:white; }

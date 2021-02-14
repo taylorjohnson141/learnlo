@@ -10,11 +10,7 @@ jest.mock('../fetchCalls/fetchCalls')
 
 describe('App', () =>{
   describe('Initial rendering',() =>{
-    it('Should render a header', () =>{
-      render(<MemoryRouter><App/></MemoryRouter>)
-      let header = screen.getByText('Learnlo!')
-      expect(header).toBeInTheDocument()
-    })
+   
     it('Should render correct Components on load', () =>{
       render(<MemoryRouter><App/></MemoryRouter>)
       let proofOfHome = screen.getByText('Learn Spanish With LearnLo!')

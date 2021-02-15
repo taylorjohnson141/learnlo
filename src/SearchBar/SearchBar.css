@@ -6,8 +6,10 @@
   font-size: 2rem;
 }
 .word-input{
-  font-size: 1.5rem;
-}
+  width: 95%;
+  margin-left: 2px;
+  margin-right: 2px;
+  font-size: 1.5rem;}
 .center{
   width: fit-content;
   margin-left: auto;

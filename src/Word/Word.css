@@ -1,6 +1,6 @@
 .word-card{ 
   border-radius: 4px;
-  color:#F7F7F7;
+  color:white ;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -21,7 +21,7 @@
   height: 30px;
 }
 .span-word{
-  background-color: #020887;
+  background-color: #1B86E5;
   text-align: center;
   border-bottom: 2px solid  #F7F7F7;
   margin-bottom: 0%;

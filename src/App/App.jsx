@@ -36,8 +36,6 @@ class App extends Component {
    return( 
    <section>
 
-     <header className = 'header'>Learnlo!</header>
-
      <NavBar/>
 
      <Route exact path='/'>

@@ -10,12 +10,14 @@
 .button-section{
   border-radius: 0px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 4px;
 }
 .button{  
+  font-size: 1.25rem;
   width: auto;
   padding: 8px;
+  margin: 4px;
   color:#F7F7F7;
   border-radius: 4px;
   background-color:  #1B86E5;

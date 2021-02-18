@@ -22,6 +22,7 @@ class App extends Component {
     this.setState({favoriteWords:copyOfState})
   }
   displayWord = (word) =>{
+    console.log(word)
     this.setState({currentWord:word})
   }
   addWord = (word) =>{
@@ -44,7 +45,7 @@ class App extends Component {
 
      <Route exact path='/'
         render = {() =>{
-          return <HomeScreen displayWord = {this.props.displayWord} addWord ={this.addWord} currentWord = {this.state.currentWord}/>
+          return <HomeScreen displayWord = {this.displayWord} addWord ={this.addWord} currentWord = {this.state.currentWord}/>
         }}>
       </Route>
       

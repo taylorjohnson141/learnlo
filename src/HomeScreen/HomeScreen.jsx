@@ -8,7 +8,7 @@ function HomeScreen(props) {
     <section>
        <SearchBar displayWord = {props.displayWord} />
        {props.currentWord &&
-    <DefinitionCard addWord={props.addWord} word = {props.word}/>
+    <DefinitionCard addWord={props.addWord} word = {props.currentWord}/>
        }
        {/* need a word and definition here */}
     </section>

@@ -2,7 +2,7 @@ import React from 'react';
 function DefinitionCard (props){
   return (
     <section>
-      {props.word}
+      {props.word.hwi.hw}
       <button onClick = {props.addWord}></button>
     </section>
 

@@ -31,11 +31,11 @@ class SearchBar extends Component{
       return
     }
    
-    if(definition.meta.lang === 'en'){
+    // if(definition.meta.lang === 'en'){
 
-      this.setState({error:'Please Type in a Spanish Word'})
-      return 
-    }
+    //   this.setState({error:'Please Type in a Spanish Word'})
+    //   return 
+    // }
       this.props.addWord(definition)
   }
     render(){

@@ -9,13 +9,20 @@ function Word(props) {
   }
   let audio;
   if (props.currentWord.hwi.prs) {
-    const audioFile = props.currentWord.hwi.prs[0].sound.audio;
+    console.log(props.currentWord)
+    let lang = props.currentWord.meta.lang
+    if(props.currentWord.hwi.prs[0].sound === undefined){
+      audio = ''
+    }else{
+      const audioFile = props.currentWord.hwi.prs[0].sound.audio;
     const audioSubDirect = audioFile.charAt(0);
     audio = (
       <audio className='audio' controls >
-        < source role = 'audio' src={`https://media.merriam-webster.com/audio/prons/es/me/mp3/${audioSubDirect}/${audioFile}.mp3`} />
+        < source role = 'audio' src={`https://media.merriam-webster.com/audio/prons/${lang}/me/mp3/${audioSubDirect}/${audioFile}.mp3`} />
       </audio>
     );
+    }
+    
   }
   return (
     <section role = 'word'className="word-card">

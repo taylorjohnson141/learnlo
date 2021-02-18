@@ -41,7 +41,7 @@ class SearchBar extends Component{
     render(){
       console.log(this.state.error)
       return(
-        <form data-testid='form' className ='word-form' onSubmit = {this.handleSubmit}>
+        <form data-testid='form' className ='word-form'>
           <label>
             Input a word you would like to Study!
             <input data-testid='form-input'className ='word-input'type="text" value = {this.state.currentWord} onChange = {this.handleChange} />
@@ -49,6 +49,7 @@ class SearchBar extends Component{
           <h1 className = 'center'>
             {this.state.error}
           </h1>
+          <button onClick ={this.handleSubmit}> Search for word</button>
         </form>
       )
     }

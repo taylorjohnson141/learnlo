@@ -36,7 +36,7 @@ class SearchBar extends Component{
     //   this.setState({error:'Please Type in a Spanish Word'})
     //   return 
     // }
-      this.props.addWord(definition)
+      this.props.displayWord(definition)
   }
     render(){
       console.log(this.state.error)

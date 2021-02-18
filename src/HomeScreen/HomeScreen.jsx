@@ -6,9 +6,9 @@ import './HomeScreen.css';
 function HomeScreen(props) {
   return (
     <section>
-       <SearchBar addWord={props.addWord} />
-       {props.word &&
-    <DefinitionCard word = {props.word}/>
+       <SearchBar displayWord = {props.displayWord} />
+       {props.currentWord &&
+    <DefinitionCard addWord={props.addWord} word = {props.word}/>
        }
        {/* need a word and definition here */}
     </section>

@@ -3,7 +3,6 @@ import Word from '../Word/Word';
 import './UserWords.css';
 import PropTypes from 'prop-types';
 
-import SearchBar from '../SearchBar/SearchBar';
 
 function WordList({words,deleteWord}){
   return words.map((word,index)=>{
@@ -14,7 +13,6 @@ function WordList({words,deleteWord}){
 function UserWords({words,addWord,deleteWord}) {
   return (
     <section>
-      <SearchBar addWord={addWord} />
       {words.length !==0 && 
       <section className="words-container">
         <WordList words = {words} addWord = {addWord} deleteWord = {deleteWord} />

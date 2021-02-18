@@ -43,7 +43,7 @@ class SearchBar extends Component{
       return(
         <form data-testid='form' className ='word-form'>
           <label>
-            Input a word you would like to Study!
+          Translate English or Spanish
             <input data-testid='form-input'className ='word-input'type="text" value = {this.state.currentWord} onChange = {this.handleChange} />
           </label>
           <h1 className = 'center'>

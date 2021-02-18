@@ -7,7 +7,7 @@ import {getWord} from '../fetchCalls/fetchCalls'
 
 jest.mock('../fetchCalls/fetchCalls')
 
-describe('SearchBar', () =>{
+describe.skip('SearchBar', () =>{
 it('Should render a form', () =>{
  render(<SearchBar/>)
  let form = screen.getByTestId('form')

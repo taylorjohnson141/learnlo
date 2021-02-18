@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 
 
 function WordList({words,deleteWord}){
+  if(words.length === 0){
+    return 'Add Some Words!'
+  }
   return words.map((word,index)=>{
     return <div key = {index}><Word  deleteWord = {deleteWord} currentWord = {word}/></div>
   });
@@ -12,11 +15,8 @@ function WordList({words,deleteWord}){
 
 function UserWords({words,addWord,deleteWord}) {
   return (
-    <section>
-      {words.length !==0 && 
-      <section className="words-container">
+    <section className ="words-container">
         <WordList words = {words} addWord = {addWord} deleteWord = {deleteWord} />
-      </section>}
     </section>
   );
 }

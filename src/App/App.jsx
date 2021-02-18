@@ -38,13 +38,15 @@ class App extends Component {
 
      <NavBar/>
 
-     <Route exact path='/'>
-        <HomeScreen/>
+     <Route exact path='/'
+        render = {() =>{
+          return <HomeScreen addWord ={this.addWord}/>
+        }}>
       </Route>
       
       <Route path = '/myWords' 
         render = {() =>{
-          return <UserWords addWord ={this.addWord} deleteWord = {this.deleteWord} words = {this.state.favoriteWords}/>
+          return <UserWords deleteWord = {this.deleteWord} words = {this.state.favoriteWords}/>
         }}>
       </Route>
 

@@ -32,7 +32,9 @@ function DefinitionCard (props){
          
       <button onClick = {() =>{
         props.addWord(props.word)
-      }}></button>
+      }}>
+        Add to your Study list!
+      </button>
     </section>
 
   )

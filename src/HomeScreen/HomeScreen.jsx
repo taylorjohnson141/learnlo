@@ -10,7 +10,10 @@ function HomeScreen(props) {
        {props.currentWord &&
     <DefinitionCard addWord={props.addWord} word = {props.currentWord}/>
        }
-       {/* need a word and definition here */}
+       {props.error && <section>
+         {props.error}
+         </section>}
+
     </section>
   );
 }

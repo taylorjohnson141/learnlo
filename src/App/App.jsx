@@ -49,7 +49,7 @@ class App extends Component {
 
      <Route exact path='/'
         render = {() =>{
-          return <HomeScreen displayWord = {this.displayWord} addWord ={this.addWord} currentWord = {this.state.currentWord}/>
+          return <HomeScreen displayWord = {this.displayWord} addWord ={this.addWord} currentWord = {this.state.currentWord} error = {this.state.error}/>
         }}>
       </Route>
       
@@ -58,8 +58,6 @@ class App extends Component {
           return <UserWords deleteWord = {this.deleteWord} words = {this.state.favoriteWords}/>
         }}>
       </Route>
-
-      <h1 className = 'center'>{this.state.error}</h1>
 
       <Route path = '/quiz' 
         render ={() =>{

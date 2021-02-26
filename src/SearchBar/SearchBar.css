@@ -8,8 +8,8 @@
 .word-input{
   width: 80%;
   display: inline-block;
-  margin-left: 6px;
-  margin-right: 2px;
+  margin-left: 20px;
+  margin-right: 20px;
   font-size: 1.5rem;
 }
 .center{
@@ -18,10 +18,9 @@
   margin-right: auto;
 }
 .search-button{
-    font-size:1rem;
+    font-size:1.5rem;
     margin-left: auto;
     margin-top: auto;
-    border-radius: 10px;
     color:white ;
     background-color:#1B86E5 ;
 }

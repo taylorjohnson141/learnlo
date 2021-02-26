@@ -2,6 +2,7 @@ import React from 'react';
 import './QuizCard.css';
 import PropTypes from 'prop-types';
 import shuffle from '../tools/shuffleArray'
+import {useState} from 'react'
 
 function QuizValues (){
   return [
@@ -16,7 +17,8 @@ function QuizList(
   incrementScore,
   decrementScore,
   favoriteWords,
-  currentWord
+  currentWord,
+  upDateMessage
   ){
  let options  =  QuizValues()
  shuffle(options)
@@ -40,10 +42,18 @@ function QuizList(
    type="button"
    className="button"
    onClick={() => {
+    setTimeout(function(){
     word.correct
     ? incrementScore()
     : decrementScore()
-    changeCurrentWord();
+    upDateMessage('')
+    changeCurrentWord()
+    }, 2000);
+
+    word.correct
+    ? upDateMessage('Great Job!')
+    : upDateMessage(`Sorry That isn't correct the correct answer is ${currentWord.shortdef[0]}`)
+   
    }}>
    {word.correct
     ? word.value.shortdef[0]
@@ -53,6 +63,7 @@ function QuizList(
  })
 }
 function QuizCard({currentWord,changeCurrentWord,incrementScore,decrementScore,favoriteWords}) {
+  let [userAnswerMessage, upDateMessage] = useState('')
   let language;
   if(currentWord.meta.lang === 'en'){
     language = 'Spanish'
@@ -72,10 +83,12 @@ function QuizCard({currentWord,changeCurrentWord,incrementScore,decrementScore,f
             incrementScore,
             decrementScore,
             favoriteWords,
-            currentWord
+            currentWord,
+            upDateMessage,
                   )
           }
         </section>
+        <p> {userAnswerMessage}</p>
         </>
       }
    </section>

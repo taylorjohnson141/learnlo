@@ -25,14 +25,30 @@ function Word(props) {
     
   }
   return (
-    <section role = 'word'className="word-card">
-      <p className="span-word">
-        {props.currentWord.hwi.hw}
-        {audio}
-      </p>
-      <p className="definition">
-        Definition:{props.currentWord.shortdef[0]}
-      </p>
+    <section role = 'word' className="word-card">
+      {props.currentWord.meta.lang === 'es' && 
+        <>
+        <p className = 'span-word'>
+          {props.currentWord.hwi.hw}
+          {audio}
+          </p>
+
+          <p className = 'definition'>
+            Definition: {props.currentWord.shortdef[0]}
+          </p>
+        </>
+          }
+      {props.currentWord.meta.lang === 'en' && 
+        <>
+        <p className = 'span-word'>
+        {props.currentWord.shortdef[0]}
+          </p>
+
+          <p className = 'definition'>
+          Definition: {props.currentWord.hwi.hw}
+          </p>
+        </>
+      }
       <button
         role = "delete-button"
         type="button"

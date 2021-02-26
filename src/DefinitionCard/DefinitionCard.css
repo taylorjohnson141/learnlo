@@ -1,0 +1,17 @@
+.card-direction{
+  margin:20px;
+}
+.addButton{
+  font-size: 1.25rem;
+  width: 10%;
+  margin-left: auto;
+  margin-top: auto;
+  border-radius: 10px;
+  color:#1B86E5 ;
+  background-color:white ;
+}
+.addButton:hover{
+  color:white ;
+  background-color:#1B86E5 ;
+  cursor: pointer;
+}

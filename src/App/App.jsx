@@ -11,6 +11,7 @@ class App extends Component {
     super()
     this.state = {
       favoriteWords:[],
+      currentWord:'',
       error:''
     }
   }
@@ -20,10 +21,18 @@ class App extends Component {
     copyOfState.splice(indexOfCurrentWord,1)
     this.setState({favoriteWords:copyOfState})
   }
+  displayWord = (word) =>{
+    console.log(word)
+    this.setState({currentWord:word})
+  }
   addWord = (word) =>{
     console.log(word)
    let wordDuplicate = this.state.favoriteWords.find(favWord =>{
-      return favWord.meta.id === word.meta.id
+     console.log(favWord.shortdef[0] === word.hwi.hw)
+      if(favWord.meta.id === word.meta.id || favWord.shortdef[0] === word.hwi.hw){
+        return true
+      } 
+      return undefined
     })
     if(wordDuplicate){
       this.setState({error:'You already have this word. Please find a different word'})
@@ -40,7 +49,7 @@ class App extends Component {
 
      <Route exact path='/'
         render = {() =>{
-          return <HomeScreen addWord ={this.addWord}/>
+          return <HomeScreen displayWord = {this.displayWord} addWord ={this.addWord} currentWord = {this.state.currentWord} error = {this.state.error}/>
         }}>
       </Route>
       
@@ -49,8 +58,6 @@ class App extends Component {
           return <UserWords deleteWord = {this.deleteWord} words = {this.state.favoriteWords}/>
         }}>
       </Route>
-
-      <h1 className = 'center'>{this.state.error}</h1>
 
       <Route path = '/quiz' 
         render ={() =>{

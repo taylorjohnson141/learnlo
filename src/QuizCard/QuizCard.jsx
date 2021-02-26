@@ -53,14 +53,19 @@ function QuizList(
  })
 }
 function QuizCard({currentWord,changeCurrentWord,incrementScore,decrementScore,favoriteWords}) {
-
+  let language;
+  if(currentWord.meta.lang === 'en'){
+    language = 'Spanish'
+  } else{
+    language = 'English'
+  }
   return (
     <section className="quiz-card">
       {favoriteWords.length < 4 
        ? <span>Please Add at Least 4 words to Study!</span> 
        : <>
        <h1 className="question">
-          What is the English translation of {currentWord.hwi.hw}?
+          What is the {`${language}`} translation of {currentWord.hwi.hw}?
         </h1>
         <section className="button-section">
           {QuizList(changeCurrentWord,

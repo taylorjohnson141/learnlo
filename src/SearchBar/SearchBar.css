@@ -1,23 +1,37 @@
 .word-form{
-  width: fit-content;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
   font-size: 2rem;
 }
 .word-input{
-  width: 95%;
-  margin-left: 2px;
+  width: 80%;
+  display: inline-block;
+  margin-left: 6px;
   margin-right: 2px;
-  font-size: 1.5rem;}
+  font-size: 1.5rem;
+}
 .center{
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
 }
+.search-button{
+    font-size:1rem;
+    margin-left: auto;
+    margin-top: auto;
+    border-radius: 10px;
+    color:white ;
+    background-color:#1B86E5 ;
+}
+  .search-button:hover{
+    color:#1B86E5 ;
+    background-color:white ;
+    cursor: pointer;
+  }
 @media only screen and (max-width: 800px) {
   .word-form{
-    width: fit-content;
     margin-left: auto;
     margin-right: auto;
     padding-left: 2px;
@@ -26,7 +40,7 @@
     font-size: 2rem;
   }
   .word-input{
-    width: 95%;
+    width: 80%;
     margin-left: 2px;
     margin-right: 2px;
     font-size: 1.5rem;
@@ -43,7 +57,7 @@
     font-size: 2rem;
   }
   .word-input{
-    width: 95%;
+    width: 80%;
     margin-left: 2px;
     margin-right: 2px;
     font-size: 1.5rem;

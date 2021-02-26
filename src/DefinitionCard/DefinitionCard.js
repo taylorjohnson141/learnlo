@@ -1,41 +1,35 @@
 import React from 'react';
+import '../Word/Word.css';
+import './DefinitionCard.css'
 function DefinitionCard (props){
   return (
-    <section>
-        {props.word.meta.lang === 'es' && 
-        <>
-                Spanish 
-
-        <section>
-          {props.word.hwi.hw}
-          </section>
-          English 
-
-          <section>
-            {props.word.shortdef[0]}
-          </section>
-        </>
-          }
-           {props.word.meta.lang === 'en' && 
-        <>
-        Spanish
-        <section>
-        {props.word.shortdef[0]}
-          </section>
-          English
-
-          <section>
+    <section className = 'word-card card-direction'>
+         {props.word.meta.lang === 'es' && 
+          <> 
+          <section className = "span-word">
             {props.word.hwi.hw}
-          </section>
+            </section> 
+            <section className = "definition">
+            {props.word.shortdef[0]}
+            </section>
+          </>
+        }
+        {props.word.meta.lang === 'en' && 
+        <>
+          <section className = "span-word">
+         {props.word.shortdef[0]}
+            </section>
+            <section className = "definition">
+          {props.word.hwi.hw}
+            </section>
         </>
-}
-         
-      <button onClick = {() =>{
+      }
+      <button className = 'addButton' onClick = {() =>{
         props.addWord(props.word)
       }}>
         Add to your Study list!
-      </button>
-    </section>
+      </button> 
+  </section>
 
   )
 }

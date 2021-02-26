@@ -25,7 +25,7 @@ function Word(props) {
     
   }
   return (
-    <section role = 'word'className="word-card">
+    <section role = 'word' className="word-card">
       {props.currentWord.meta.lang === 'es' && 
         <>
         <p className = 'span-word'>

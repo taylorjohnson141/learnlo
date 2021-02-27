@@ -2,7 +2,6 @@
 .env
 package.json
 /.vscode
-.travis.yml
 # dependencies
 /node_modules
 /.pnp

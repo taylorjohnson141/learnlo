@@ -22,7 +22,6 @@ class App extends Component {
     this.setState({favoriteWords:copyOfState})
   }
   displayWord = (word) =>{
-    console.log(word)
     this.setState({currentWord:word})
   }
   addWord = (word) =>{

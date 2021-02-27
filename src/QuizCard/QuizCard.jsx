@@ -20,6 +20,7 @@ function QuizList(
   currentWord,
   upDateMessage
   ){
+    let [buttonDisabled, updateButton] = useState(false)
  let options  =  QuizValues()
  shuffle(options)
  if(favoriteWords.length<4){
@@ -38,6 +39,7 @@ function QuizList(
      text = favoriteWords[idx].shortdef[0]
    }
    return  <button
+   let disabled = {buttonDisabled}
    key ={idx}
    type="button"
    className="button"
@@ -48,8 +50,9 @@ function QuizList(
     : decrementScore()
     upDateMessage('')
     changeCurrentWord()
+    updateButton(false)
     }, 2000);
-
+    updateButton(true)
     word.correct
     ? upDateMessage('Great Job!')
     : upDateMessage(`Sorry That isn't correct the correct answer is ${currentWord.shortdef[0]}`)

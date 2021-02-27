@@ -10,6 +10,7 @@
   margin-bottom: 0;
 }
 .delete-button{
+  cursor: pointer;
   color :#F7F7F7;
   background-color: #8C1833;
   margin-left: auto; 

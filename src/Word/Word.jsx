@@ -52,6 +52,18 @@ function Word(props) {
             Definition: {props.currentWord.en.hwi.hw}
             {enAudio}
           </p>
+        
+            
+            {/* {props.currentWord.en.def[0].sseq[0][0][1].dt[1][1][0]
+            &&
+            <p className = 'definition'>
+            Example Sentance: {props.currentWord.en.def[0].sseq[0][0][1].dt[1][1][0].t}
+            {props.currentWord.en.def[0].sseq[0][0][1].dt[1][1][0].tr}
+           </p> */}
+            } 
+            
+            
+          
 
       <button
         role = "delete-button"

@@ -1,7 +1,7 @@
 .nav-container{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-size:4vh;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font:5vh;
   display: flex;
   align-items: center;
   justify-content: space-around;

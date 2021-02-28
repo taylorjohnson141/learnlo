@@ -7,7 +7,6 @@ function AudioPlayer (props) {
 return (
     <>
   <button onClick ={ () =>{
-    console.log(playing)
     if(!playing){
       audioElement.play();
       updatePlaying(true)

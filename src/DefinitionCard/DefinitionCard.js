@@ -4,26 +4,14 @@ import './DefinitionCard.css'
 function DefinitionCard (props){
   return (
     <section className = 'word-card card-direction'>
-         {props.word.meta.lang === 'es' && 
-          <> 
+      
           <section className = "span-word">
-            {props.word.hwi.hw}
+            {props.word.es.hwi.hw}
             </section> 
             <section className = "definition">
-            {props.word.shortdef[0]}
+            {props.word.en.hwi.hw}
             </section>
-          </>
-        }
-        {props.word.meta.lang === 'en' && 
-        <>
-          <section className = "span-word">
-         {props.word.shortdef[0]}
-            </section>
-            <section className = "definition">
-          {props.word.hwi.hw}
-            </section>
-        </>
-      }
+          
       <button className = 'addButton' onClick = {() =>{
         props.addWord(props.word)
       }}>

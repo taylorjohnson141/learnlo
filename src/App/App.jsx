@@ -26,10 +26,8 @@ class App extends Component {
     this.setState({currentWord:word})
   }
   addWord = (word) =>{
-    console.log(word)
    let wordDuplicate = this.state.favoriteWords.find(favWord =>{
-     console.log(favWord.shortdef[0] === word.hwi.hw)
-      if(favWord.meta.id === word.meta.id || favWord.shortdef[0] === word.hwi.hw){
+      if(favWord.es.meta.id === word.es.meta.id || favWord.es.shortdef[0] === word.en.hwi.hw){
         return true
       } 
       return undefined

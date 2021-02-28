@@ -7,48 +7,52 @@ function Word(props) {
   if (!props.currentWord) {
     return <h1 role = 'no-word-error'className="center">Add a word!</h1>;
   }
-  let audio;
-  if (props.currentWord.hwi.prs) {
-    console.log(props.currentWord)
-    let lang = props.currentWord.meta.lang
-    if(props.currentWord.hwi.prs[0].sound === undefined){
-      audio = ''
+  let esAudio;
+  let enAudio;
+
+  if (props.currentWord.es.hwi.prs) {
+  
+    if(props.currentWord.es.hwi.prs[0].sound === undefined){
+      esAudio = ''
     }else{
-      const audioFile = props.currentWord.hwi.prs[0].sound.audio;
-    const audioSubDirect = audioFile.charAt(0);
-    audio = (
+      const esAudioFile = props.currentWord.es.hwi.prs[0].sound.audio;
+    const esAudioSubDirect = esAudioFile.charAt(0);
+    esAudio = (
       <audio className='audio' controls >
-        < source role = 'audio' src={`https://media.merriam-webster.com/audio/prons/${lang}/me/mp3/${audioSubDirect}/${audioFile}.mp3`} />
+        < source role = 'audio' src={`https://media.merriam-webster.com/audio/prons/es/me/mp3/${esAudioSubDirect}/${esAudioFile}.mp3`} />
       </audio>
     );
+    }
+  }
+   console.log(props.currentWord.en.hwi.prs[0])
+    if (props.currentWord.en.hwi.prs) {
+    
+      if(props.currentWord.en.hwi.prs[0].sound === undefined){
+        enAudio = ''
+      }else{
+        const enAudioFile = props.currentWord.en.hwi.prs[0].sound.audio;
+      const enAudioSubDirect = enAudioFile.charAt(0);
+      enAudio = (
+        <audio className='audio' controls >
+          < source role = 'audio' src={`https://media.merriam-webster.com/audio/prons/en/us/mp3/${enAudioSubDirect}/${enAudioFile}.mp3`} />
+        </audio>
+      );
     }
     
   }
   return (
     <section role = 'word' className="word-card">
-      {props.currentWord.meta.lang === 'es' && 
-        <>
+     
         <p className = 'span-word'>
-          {props.currentWord.hwi.hw}
-          {audio}
+          {props.currentWord.es.hwi.hw}
+          {esAudio}
           </p>
 
           <p className = 'definition'>
-            Definition: {props.currentWord.shortdef[0]}
-          </p>
-        </>
-          }
-      {props.currentWord.meta.lang === 'en' && 
-        <>
-        <p className = 'span-word'>
-        {props.currentWord.shortdef[0]}
+            Definition: {props.currentWord.en.hwi.hw}
+            {enAudio}
           </p>
 
-          <p className = 'definition'>
-          Definition: {props.currentWord.hwi.hw}
-          </p>
-        </>
-      }
       <button
         role = "delete-button"
         type="button"

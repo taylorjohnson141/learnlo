@@ -27,17 +27,19 @@ function QuizList(
    return <span>Please Add at Least 4 words to Study!</span>
  }
  return options.map((word,idx) =>{
-  
+  debugger
+
    if(word.correct){
      word.value = currentWord
    }
    let text;
    if(currentWord && currentWord.es.shortdef[0] === favoriteWords[idx].es.shortdef[0]){
-     text = 'super'
+     text = 'pero'
    }
    else {
-     text = favoriteWords[idx].es.shortdef[0]
+     text = favoriteWords[idx].en.shortdef[0]
    }
+
    return  <button
    let disabled = {buttonDisabled}
    key ={idx}
@@ -55,11 +57,11 @@ function QuizList(
     updateButton(true)
     word.correct
     ? upDateMessage('Great Job!')
-    : upDateMessage(`Sorry That isn't correct the correct answer is ${currentWord.es.shortdef[0]}`)
+    : upDateMessage(`Sorry that isn't correct the correct answer is ${currentWord.es.hwi.hw}`)
    
    }}>
    {word.correct
-    ? word.value.shortdef[0]
+    ? word.value.es.hwi.hw
     : text
   }
  </button>

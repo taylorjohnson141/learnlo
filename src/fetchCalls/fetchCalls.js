@@ -25,7 +25,7 @@ export const getWord = async (word) =>{
   if(typeof secondDefinition[0] !== "object"){
     return "Sorry we can't find that word"
   }
-  if(secondDefinition[0].meta.lang === lang  ){
+  if(secondDefinition[0].meta.lang === lang || secondDefinition[0].hwi.hw ===definition[0].hwi.hw ){
     return "Sorry we can't find that word"
   }
   let secondLang = secondDefinition[0].meta.lang

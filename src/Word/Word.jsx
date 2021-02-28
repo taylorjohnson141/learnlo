@@ -1,10 +1,9 @@
 import React from 'react';
 import './Word.css';
 import PropTypes from 'prop-types';
-import {useRef} from 'react'
+import AudioPlayer from '../AudioPlayer/AudioPlayer'
 
 function Word(props) {
-  let audioRef = useRef()
 
   if (!props.currentWord) {
     return <h1 role = 'no-word-error'className="center">Add a word!</h1>;
@@ -20,9 +19,8 @@ function Word(props) {
       const esAudioFile = props.currentWord.es.hwi.prs[0].sound.audio;
     const esAudioSubDirect = esAudioFile.charAt(0);
     esAudio = (
-      <audio className='audio' ref = {`audio${props.currentWord.es.hwi.hw}`} controls >
-        < source role = 'audio' src={`https://media.merriam-webster.com/audio/prons/es/me/mp3/${esAudioSubDirect}/${esAudioFile}.mp3`} />
-      </audio>
+      <AudioPlayer src={`https://media.merriam-webster.com/audio/prons/es/me/mp3/${esAudioSubDirect}/${esAudioFile}.mp3`} ></AudioPlayer>
+      
     );
     }
   }

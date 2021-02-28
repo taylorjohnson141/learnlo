@@ -1,4 +1,4 @@
-import useState from 'react'
+import {useState} from 'react'
 
 function AudioPlayer (props) {
   let [playing, updatePlaying] = useState(false)
@@ -6,18 +6,18 @@ function AudioPlayer (props) {
 
 return (
     <>
- 
   <button onClick ={ () =>{
+    console.log(playing)
     if(!playing){
       audioElement.play();
       updatePlaying(true)
-    }
-    else{
-      audioElement.pause()
-      updatePlaying(true)
-
+      setTimeout(() =>{
+        audioElement.pause()
+        updatePlaying(false)
+      },1000)
     }
   }}>
+    Push to Play
   </button>
   </>
 )

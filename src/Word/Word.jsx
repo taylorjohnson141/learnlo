@@ -20,7 +20,6 @@ function Word(props) {
     const esAudioSubDirect = esAudioFile.charAt(0);
     esAudio = (
       <AudioPlayer src={`https://media.merriam-webster.com/audio/prons/es/me/mp3/${esAudioSubDirect}/${esAudioFile}.mp3`} ></AudioPlayer>
-      
     );
     }
   }
@@ -33,9 +32,8 @@ function Word(props) {
         const enAudioFile = props.currentWord.en.hwi.prs[0].sound.audio;
       const enAudioSubDirect = enAudioFile.charAt(0);
       enAudio = (
-        <audio className='audio' ref = {`audio${props.currentWord.en.hwi.hw}`} controls >
-          < source role = 'audio' src={`https://media.merriam-webster.com/audio/prons/en/us/mp3/${enAudioSubDirect}/${enAudioFile}.mp3`} />
-        </audio>
+        <AudioPlayer src={`https://media.merriam-webster.com/audio/prons/en/us/mp3/${enAudioSubDirect}/${enAudioFile}.mp3`}> </AudioPlayer>
+        
       );
     }
     

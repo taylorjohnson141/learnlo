@@ -22,13 +22,14 @@ export const getWord = async (word) =>{
   let secondResponse = await fetch(`https://www.dictionaryapi.com/api/v3/references/spanish/json/${nextQueryWord}?key=${process.env.REACT_APP_API_KEY}`)
   let secondDefinition = await secondResponse.json()
   console.log(secondDefinition)
-  if(typeof secondDefinition[0] !== "object" || Array.isArray(secondDefinition[0])){
+  if(typeof secondDefinition[0] !== "object"){
     return "Sorry we can't find that word"
   }
-  let secondLang = secondDefinition[0]
   if(secondDefinition[0].meta.lang === lang  ){
     return "Sorry we can't find that word"
   }
+  let secondLang = secondDefinition[0].meta.lang
+
   let words = {
     [lang] : definition[0],
     [secondLang] : secondDefinition[0]

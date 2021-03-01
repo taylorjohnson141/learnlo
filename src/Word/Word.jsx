@@ -23,7 +23,6 @@ function Word(props) {
     );
     }
   }
-   console.log(props.currentWord.en.hwi.prs[0])
     if (props.currentWord.en.hwi.prs) {
     
       if(props.currentWord.en.hwi.prs[0].sound === undefined){

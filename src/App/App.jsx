@@ -19,11 +19,9 @@ class App extends Component {
     let indexOfCurrentWord = this.state.favoriteWords.indexOf(currentWord)
     let copyOfState = [...this.state.favoriteWords]
     copyOfState.splice(indexOfCurrentWord,1)
-    console.log(copyOfState)
     this.setState({favoriteWords:copyOfState})
   }
   displayWord = (word) =>{
-    console.log(word)
     this.setState({currentWord:word})
   }
   addWord = (word) =>{

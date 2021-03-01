@@ -23,7 +23,7 @@ function DefinitionCard (props){
       if(props.word.en.hwi.prs[0].sound === undefined){
         enAudio = ''
       }else{
-        const enAudioFile = props.word.en.hwi.prs[0].sound.audio;
+      const enAudioFile = props.word.en.hwi.prs[0].sound.audio;
       const enAudioSubDirect = enAudioFile.charAt(0);
       enAudio = (
         <AudioPlayer src={`https://media.merriam-webster.com/audio/prons/en/us/mp3/${enAudioSubDirect}/${enAudioFile}.mp3`}> </AudioPlayer>
@@ -38,16 +38,19 @@ function DefinitionCard (props){
             {props.word.es.hwi.hw}
             {esAudio}
             </h1> 
-            <h1 className = 'def-word' >
-            {props.word.en.hwi.hw}
-            {enAudio}
-            </h1>
-          
-      <button className = 'addButton' onClick = {() =>{
+            <button className = 'addButton' onClick = {() =>{
         props.addWord(props.word)
       }}>
         Add to your Study list!
       </button> 
+            <h1 className = 'def-word' >
+            {props.word.en.hwi.hw}
+            {enAudio}
+            </h1>
+
+        
+          
+     
   </section>
 
   )

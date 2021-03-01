@@ -1,13 +1,16 @@
 import {useState} from 'react'
 import Speaker from '../images/speaker.svg'
+import './AudioPlayer.css'
 function AudioPlayer (props) {
   let [playing, updatePlaying] = useState(false)
   const audioElement = new Audio(props.src);
 
 return (
     <>
-    <div className = 'svg-container'>
-  <img src = {Speaker} onClick ={ () =>{
+    <section className ='svg-container'>
+
+    
+  <img  className = 'svg' src = {Speaker} onClick ={ () =>{
     if(!playing){
       audioElement.play();
       updatePlaying(true)
@@ -17,8 +20,7 @@ return (
       },1000)
     }
   }}/> 
-      </div>
-
+</section>
   </>
 )
 }

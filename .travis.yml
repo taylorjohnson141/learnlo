@@ -8,6 +8,6 @@ deploy:
   app: learnlo
   skip_cleanup: true
   on: design-overhaul
-  script:
+script:
 - echo "skipping tests"
 

@@ -9,8 +9,7 @@ return (
     <>
     <section className ='svg-container'>
 
-    
-  <img  className = 'svg' src = {Speaker} onClick ={ () =>{
+  <img  tabIndex ={0} className = 'svg' src = {Speaker} onClick ={ () =>{
     if(!playing){
       audioElement.play();
       updatePlaying(true)

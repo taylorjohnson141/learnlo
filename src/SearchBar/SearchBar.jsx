@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {getWord} from '../fetchCalls/fetchCalls'
 import './SearchBar.css'
 import PropTypes from 'prop-types';
-
+import SearchIcon from '../images/search.svg'
 
 class SearchBar extends Component{
   constructor(){
@@ -39,7 +39,7 @@ class SearchBar extends Component{
         <form data-testid='form' className ='word-form'>
           <label>
             <input placeholder ='Translate English or Spanish' data-testid='form-input'className ='word-input'type="text" value = {this.state.currentWord} onChange = {this.handleChange} />
-            <button className = 'search-button'onClick ={this.handleSubmit}> Search for word</button>
+            <img  tabIndex ={0} src = {SearchIcon} className = 'search-button'onClick ={this.handleSubmit}Search for word/>
           </label>
           <h1 className = 'center'>
             {this.state.error}

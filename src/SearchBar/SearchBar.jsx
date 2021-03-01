@@ -34,10 +34,20 @@ class SearchBar extends Component{
       this.props.displayWord(definition)
   }
     render(){
+      const lang = navigator.language
+      let userLang;
+      let searchBarMessage
+      if(lang.includes('en')){
+        userLang = 'Learn Spanish Fast!'
+        searchBarMessage ='Translate English or Spanish'
+      }else{
+        userLang = 'Aprender Inglés rápido!'
+        searchBarMessage = 'Traducir Español o inglés'
+      }
       return(
         <>
         <form data-testid='form' className ='word-form' onSubmit ={this.handleSubmit}>
-        <h1 className = 'home-header'>Learn Spanish Fast!</h1>
+        <h1 className = 'home-header'>{userLang}</h1>
 
           <label>
             <input placeholder ='Translate English or Spanish' data-testid='form-input'className ='word-input'type="text" value = {this.state.currentWord} onChange = {this.handleChange} />

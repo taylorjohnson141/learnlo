@@ -7,7 +7,10 @@ export const getWord = async (word) =>{
     return "Sorry we can't find that word"
   }
   let lang = definition[0].meta.lang
-  console.log(lang)
+  console.log(definition[0])
+  if( definition[0].def === undefined){
+    return "Sorry we can't find that word"
+  }
   let nextCal  = definition[0].def[0].sseq[0][0][1].dt[0][1]
   let pipeIndex = nextCal.indexOf('|')
   let endCurlyIndex;
@@ -28,6 +31,7 @@ export const getWord = async (word) =>{
   if(secondDefinition[0].meta.lang === lang || secondDefinition[0].hwi.hw ===definition[0].hwi.hw ){
     return "Sorry we can't find that word"
   }
+  console.log('hello',secondDefinition)
   let secondLang = secondDefinition[0].meta.lang
 
   let words = {

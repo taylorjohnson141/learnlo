@@ -34,9 +34,11 @@ class SearchBar extends Component{
       this.props.displayWord(definition)
   }
     render(){
-      console.log(this.state.error)
       return(
+        <>
         <form data-testid='form' className ='word-form' onSubmit ={this.handleSubmit}>
+        <h1 className = 'home-header'>Learn Spanish Fast!</h1>
+
           <label>
             <input placeholder ='Translate English or Spanish' data-testid='form-input'className ='word-input'type="text" value = {this.state.currentWord} onChange = {this.handleChange} />
             <img  tabIndex ={0} src = {SearchIcon} className = 'search-button' onClick ={this.handleSubmit}Search for word/>
@@ -45,6 +47,7 @@ class SearchBar extends Component{
             {this.state.error}
           </h1>
         </form>
+        </>
       )
     }
 }

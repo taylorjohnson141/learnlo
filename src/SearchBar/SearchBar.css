@@ -1,5 +1,5 @@
 .word-form{
-  text-align: center;
+  text-align: left;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
@@ -8,7 +8,8 @@
   font-size: 2rem;
 }
 .word-input{
-  width: 80%;
+  height: 3rem;
+  width: 60%;
   display: inline-block;
   margin-left: 20px;
   margin-right: -20px;
@@ -28,6 +29,14 @@
     margin-top: auto;
     margin-top: 1px;  
     height: 1.2rem;
+}
+.home-header{
+  margin-left: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
 }
   .search-button:hover{
     cursor: pointer;

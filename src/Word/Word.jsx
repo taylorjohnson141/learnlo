@@ -58,7 +58,7 @@ function Word(props) {
             Example Sentance: {props.currentWord.en.def[0].sseq[0][0][1].dt[1][1][0].t}
             {props.currentWord.en.def[0].sseq[0][0][1].dt[1][1][0].tr}
            </p> */}
-            } 
+            
             
             
           

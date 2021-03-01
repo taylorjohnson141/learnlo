@@ -1,16 +1,15 @@
 import React from 'react';
-import '../Word/Word.css';
 import './DefinitionCard.css'
 function DefinitionCard (props){
   return (
-    <section className = 'word-card card-direction'>
+    <section className = 'card-direction'>
       
-          <section className = "span-word">
+          <h1 className = 'def-word' >
             {props.word.es.hwi.hw}
-            </section> 
-            <section className = "definition">
+            </h1> 
+            <h1 className = 'def-word' >
             {props.word.en.hwi.hw}
-            </section>
+            </h1>
           
       <button className = 'addButton' onClick = {() =>{
         props.addWord(props.word)

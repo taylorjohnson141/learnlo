@@ -4,7 +4,7 @@ import './NavBar.css';
 function NavBar() {
   return (
     <section className="nav-container">
-      <p>Learnlo!</p>
+      <p className = 'learnlo'>Learnlo!</p>
       <NavLink className="link" to="/">Home</NavLink>
       <NavLink className="link" to="/myWords">My Words</NavLink>
       <NavLink className="link" to="/quiz">Quiz </NavLink>

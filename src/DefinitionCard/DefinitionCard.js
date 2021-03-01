@@ -17,7 +17,6 @@ function DefinitionCard (props){
     );
     }
   }
-   console.log(props.word.en.hwi.prs[0])
     if (props.word.en.hwi.prs) {
     
       if(props.word.en.hwi.prs[0].sound === undefined){

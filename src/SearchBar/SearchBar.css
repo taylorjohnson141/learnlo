@@ -26,12 +26,12 @@
     font-size:1.5rem;
     margin-left: auto;
     margin-top: auto;
-    color:white ;
+    color:#FBFAF5 ;
     background-color:#1B86E5 ;
 }
   .search-button:hover{
     color:#1B86E5 ;
-    background-color:white ;
+    background-color:#FBFAF5 ;
     cursor: pointer;
   }
 @media only screen and (max-width: 800px) {

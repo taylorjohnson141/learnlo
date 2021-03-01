@@ -1,12 +1,13 @@
 import {useState} from 'react'
-
+import Speaker from '../images/speaker.svg'
 function AudioPlayer (props) {
   let [playing, updatePlaying] = useState(false)
   const audioElement = new Audio(props.src);
 
 return (
     <>
-  <button onClick ={ () =>{
+    <div className = 'svg-container'>
+  <img src = {Speaker} onClick ={ () =>{
     if(!playing){
       audioElement.play();
       updatePlaying(true)
@@ -15,9 +16,9 @@ return (
         updatePlaying(false)
       },1000)
     }
-  }}>
-    Push to Play
-  </button>
+  }}/> 
+      </div>
+
   </>
 )
 }

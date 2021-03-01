@@ -1,0 +1,7 @@
+.svg-container{
+  background-size: 10px 10px;
+  display: inline;
+}
+.svg-container :hover{
+  cursor: pointer;
+}

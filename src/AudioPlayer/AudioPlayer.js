@@ -1,23 +1,16 @@
-import {useState} from 'react'
-
+import {useState,useEffect} from 'react'
+import Speaker from '../images/speaker.svg'
+import './AudioPlayer.css'
 function AudioPlayer (props) {
-  let [playing, updatePlaying] = useState(false)
   const audioElement = new Audio(props.src);
-
+  
 return (
     <>
-  <button onClick ={ () =>{
-    if(!playing){
-      audioElement.play();
-      updatePlaying(true)
-      setTimeout(() =>{
-        audioElement.pause()
-        updatePlaying(false)
-      },1000)
-    }
-  }}>
-    Push to Play
-  </button>
+    <section className ='svg-container'>
+    <img  tabIndex ={0} className = 'svg' src = {Speaker} onClick ={ () =>{
+     audioElement.play();
+  }}/> 
+</section>
   </>
 )
 }

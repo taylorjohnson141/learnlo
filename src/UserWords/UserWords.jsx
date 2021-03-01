@@ -14,7 +14,6 @@ function WordList({words,deleteWord}){
 }
 
 function UserWords({words,addWord,deleteWord}) {
-  console.log('words',words)
   return (
     <section className ="words-container">
         <WordList words = {words} addWord = {addWord} deleteWord = {deleteWord} />

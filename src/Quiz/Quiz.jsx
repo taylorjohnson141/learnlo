@@ -27,7 +27,6 @@ class Quiz extends Component {
   changeCurrentWord = async (boolean) =>{
 
      await this.setState(prevState =>{
-       console.log(prevState)
        return{
        turn:prevState.turn + 1
        }
@@ -37,7 +36,6 @@ class Quiz extends Component {
       this.setState({finalScore:((this.state.score / this.state.turnLength) *100)}) 
       return 
     }else{
-      console.log('hello',this.state.turn)
       this.setState({currentWord:this.props.favoriteWords[this.state.turn]})
     }
   }

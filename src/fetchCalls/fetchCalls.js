@@ -1,4 +1,3 @@
-import { object } from "prop-types"
 
 export const getWord = async (word) =>{
   let response = await fetch(`https://www.dictionaryapi.com/api/v3/references/spanish/json/${word}?key=${process.env.REACT_APP_API_KEY}`)
@@ -7,7 +6,9 @@ export const getWord = async (word) =>{
     return "Sorry we can't find that word"
   }
   let lang = definition[0].meta.lang
-  console.log(lang)
+  if( definition[0].def === undefined){
+    return "Sorry we can't find that word"
+  }
   let nextCal  = definition[0].def[0].sseq[0][0][1].dt[0][1]
   let pipeIndex = nextCal.indexOf('|')
   let endCurlyIndex;
@@ -18,14 +19,12 @@ export const getWord = async (word) =>{
     }
   }
   let nextQueryWord = nextCal.slice(pipeIndex+1,endCurlyIndex)
-  console.log(nextQueryWord)
   let secondResponse = await fetch(`https://www.dictionaryapi.com/api/v3/references/spanish/json/${nextQueryWord}?key=${process.env.REACT_APP_API_KEY}`)
   let secondDefinition = await secondResponse.json()
-  console.log(secondDefinition)
   if(typeof secondDefinition[0] !== "object"){
     return "Sorry we can't find that word"
   }
-  if(secondDefinition[0].meta.lang === lang  ){
+  if(secondDefinition[0].meta.lang === lang || secondDefinition[0].hwi.hw ===definition[0].hwi.hw ){
     return "Sorry we can't find that word"
   }
   let secondLang = secondDefinition[0].meta.lang

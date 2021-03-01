@@ -1,21 +1,23 @@
 .nav-container{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-size:4vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color: #1B86E5;
+  padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: #1B86E5;
 }
 .link{
+  font-size: 1.25rem;
+  padding-left: 2rem;
   color: white;
   text-decoration: none;
 }
-.logo{
-  height: 16vh;
-  width: 16vh;
-  margin: 0;
-  padding: 0;
+.learnlo{
+  padding-left: 1rem;
+  margin: 6px;
+  font-size: 1.75rem;
+  color: #00008B;
 }
   .link:visited { text-decoration: none; color:white; }
   .link:focus { text-decoration: none; color:white; }

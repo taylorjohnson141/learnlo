@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {getWord} from '../fetchCalls/fetchCalls'
 import './SearchBar.css'
 import PropTypes from 'prop-types';
-
+import SearchIcon from '../images/search.svg'
 
 class SearchBar extends Component{
   constructor(){
@@ -34,17 +34,30 @@ class SearchBar extends Component{
       this.props.displayWord(definition)
   }
     render(){
-      console.log(this.state.error)
+      const lang = navigator.language
+      let userLang;
+      let searchBarMessage
+      if(lang.includes('en')){
+        userLang = 'Learn Spanish Fast!'
+        searchBarMessage ='Translate English or Spanish'
+      }else{
+        userLang = 'Aprender Inglés rápido!'
+        searchBarMessage = 'Traducir Español o inglés'
+      }
       return(
-        <form data-testid='form' className ='word-form'>
+        <>
+        <form data-testid='form' className ='word-form' onSubmit ={this.handleSubmit}>
+        <h1 className = 'home-header'>{userLang}</h1>
+
           <label>
             <input placeholder ='Translate English or Spanish' data-testid='form-input'className ='word-input'type="text" value = {this.state.currentWord} onChange = {this.handleChange} />
-            <button className = 'search-button'onClick ={this.handleSubmit}> Search for word</button>
+            <img  tabIndex ={0} src = {SearchIcon} className = 'search-button' onClick ={this.handleSubmit}Search for word/>
           </label>
           <h1 className = 'center'>
             {this.state.error}
           </h1>
         </form>
+        </>
       )
     }
 }

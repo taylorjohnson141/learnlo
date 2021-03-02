@@ -42,14 +42,14 @@ class SearchBar extends Component{
         searchBarMessage ='Translate English or Spanish'
       }else{
         userLang = 'Aprender Inglés rápido!'
-        searchBarMessage = 'Traducir Español o inglés'
+        searchBarMessage = 'Traducir Español o Inglés'
       }
       return(
         <>
         <h1 className = 'home-header'>{userLang}</h1>
         <form data-testid='form' className ='word-form' onSubmit ={this.handleSubmit}>
           <label>
-            <input placeholder ='Translate English or Spanish' data-testid='form-input'className ='word-input'type="text" value = {this.state.currentWord} onChange = {this.handleChange} />
+            <input placeholder ={searchBarMessage} data-testid='form-input'className ='word-input'type="text" value = {this.state.currentWord} onChange = {this.handleChange} />
             <img  tabIndex ={0} src = {SearchIcon} className = 'search-button' onClick ={this.handleSubmit}/>
           </label>
           <h1 className = 'center'>

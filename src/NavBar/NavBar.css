@@ -19,6 +19,10 @@
   font-size: 1.75rem;
   color: #00008B;
 }
+.final{
+  padding-right: 4rem;
+
+}
   .link:visited { text-decoration: none; color:white; }
   .link:focus { text-decoration: none; color:white; }
   .link:hover, .link:active { text-decoration: none; color:darkblue; }

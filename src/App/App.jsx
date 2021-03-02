@@ -4,6 +4,8 @@ import {Route} from 'react-router-dom'
 import UserWords from '../UserWords/UserWords'
 import Quiz from '../Quiz/Quiz'
 import HomeScreen from '../HomeScreen/HomeScreen'
+import {Helmet} from "react-helmet";
+
 import './App.css';
 
 class App extends Component {
@@ -40,7 +42,11 @@ class App extends Component {
   }
   render() {
    return( 
+     
    <section>
+    <Helmet>
+       <title> Learnlo!</title>
+    </Helmet>
 
      <NavBar/>
 

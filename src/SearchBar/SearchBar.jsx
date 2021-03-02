@@ -50,7 +50,7 @@ class SearchBar extends Component{
         <form data-testid='form' className ='word-form' onSubmit ={this.handleSubmit}>
           <label>
             <input placeholder ='Translate English or Spanish' data-testid='form-input'className ='word-input'type="text" value = {this.state.currentWord} onChange = {this.handleChange} />
-            <img  tabIndex ={0} src = {SearchIcon} className = 'search-button' onClick ={this.handleSubmit}Search for word/>
+            <img  tabIndex ={0} src = {SearchIcon} className = 'search-button' onClick ={this.handleSubmit}/>
           </label>
           <h1 className = 'center'>
             {this.state.error}

@@ -7,7 +7,7 @@ function NavBar() {
       <p className = 'learnlo'>Learnlo!</p>
       <NavLink className="link" to="/">Home</NavLink>
       <NavLink className="link" to="/myWords">My Words</NavLink>
-      <NavLink className="link" to="/quiz">Quiz </NavLink>
+      <NavLink className="link final" to="/quiz">Quiz </NavLink>
     </section>
   );
 }
